@@ -1,5 +1,30 @@
 # Assets Directory
 
+## Brand Colors
+
+Based on the color logo analysis, the website uses these brand colors:
+
+### Primary Colors (Teal/Cyan)
+
+- Primary 500: `#009292` - Main brand teal
+- Primary 700: `#006166` - Dark teal for depth
+
+### Secondary Colors (Red)
+
+- Secondary 500: `#FF0000` - Brand red for accents
+- Secondary 900: `#350A0A` - Dark red/maroon
+
+### Neutral Colors
+
+- Neutral 950: `#000000` - Pure black from logo
+- Various gray shades for text and backgrounds
+
+### Usage Guidelines
+
+- **Primary (Teal)**: Headers, buttons, links, brand elements
+- **Secondary (Red)**: Call-to-action buttons, highlights, alerts
+- **Neutral (Black/Gray)**: Text, backgrounds, subtle elements
+
 ## Images
 
 Place your images in this directory:
