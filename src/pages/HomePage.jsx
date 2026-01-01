@@ -7,7 +7,7 @@ import TestimonialsSection from "../components/TestimonialsSection";
 
 const HomePage = () => {
   return (
-    <div className="pt-16 lg:pt-20">
+    <div>
       <HeroSection />
       <AboutSection />
       <ServicesSection />

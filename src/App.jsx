@@ -15,7 +15,7 @@ function App() {
       <div className="App">
         <ScrollToTop />
         <Header />
-        <main className="pt-[128px]">
+        <main className="pt-16">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
