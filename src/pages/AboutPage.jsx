@@ -89,7 +89,7 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="pt-24">
+    <div>
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-r from-primary-600 to-blue-600 text-white">
         <div className="container-custom text-center">
