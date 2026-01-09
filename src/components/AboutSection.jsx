@@ -47,9 +47,9 @@ const AboutSection = () => {
   }, [productionImages.length]);
 
   const stats = [
-    { icon: FaAward, number: "10+", label: "Years Experience" },
-    { icon: FaUsers, number: "500+", label: "Happy Clients" },
-    { icon: FaProjectDiagram, number: "1000+", label: "Projects Completed" },
+    { icon: FaAward, number: "5+", label: "Years Experience" },
+    { icon: FaUsers, number: "50+", label: "Happy Clients" },
+    { icon: FaProjectDiagram, number: "150+", label: "Projects Completed" },
   ];
 
   return (
@@ -70,19 +70,16 @@ const AboutSection = () => {
 
             <div className="prose prose-lg text-gray-600 mb-8">
               <p className="leading-relaxed">
-                We are a group of passionate and experienced{" "}
-                <strong>Filmmakers</strong> who decided to start a new journey
-                and help medium-sized businesses to grow with videos and
-                marketing by reaching the right audience.
-              </p>
-              <p className="leading-relaxed">
-                With over <strong>10+ years</strong> of industry experience
-                working with global brands and many big video production houses
-                in Mumbai like VIACOM 18 MOTION PICTURE, SALAM BOMBAY
-                FOUNDATION, and MTV to produce commercials and videos with
-                sky-high production value, we came together to make our dream of
-                producing enterprise-grade videos come true with the aim to make
-                artistic videos by putting in a filmmaker's ideology.
+                The Times Communication is a creative film and media production
+                house based in Rajkot, Gujarat, driven by a passion for powerful
+                visual storytelling. We specialize in crafting corporate films,
+                brand stories, real estate walkthroughs, and institutional
+                videos for hospitals and educational institutes, helping
+                businesses communicate with clarity and impact. With a strong
+                focus on creativity, precision, and global-standard production
+                quality, we approach every project with a filmmaker’s
+                mindset—transforming ideas into engaging visuals that connect
+                with the right audience and leave a lasting impression.
               </p>
             </div>
 
@@ -128,7 +125,8 @@ const AboutSection = () => {
                     loading={index === 0 ? "eager" : "lazy"}
                     onError={(e) => {
                       e.target.onerror = null; // prevent infinite loop
-                      e.target.src = "https://via.placeholder.com/1600x1000/009292/ffffff?text=The+Times+Communication";
+                      e.target.src =
+                        "https://via.placeholder.com/1600x1000/009292/ffffff?text=The+Times+Communication";
                     }}
                   />
                 ))}
@@ -151,12 +149,13 @@ const AboutSection = () => {
                 ))}
               </div>
 
-
               {/* Additional Floating Badge */}
               <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-gray-100 animate-fade-in z-20">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-semibold text-gray-900">10+ Years</span>
+                  <span className="text-sm font-semibold text-gray-900">
+                    10+ Years
+                  </span>
                 </div>
                 <div className="text-xs text-gray-600 mt-1">Experience</div>
               </div>
@@ -164,8 +163,14 @@ const AboutSection = () => {
 
             {/* Background Decoration */}
             <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-primary-400 to-blue-500 rounded-full opacity-20 -z-10 animate-pulse"></div>
-            <div className="absolute top-1/2 -left-12 w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-20 -z-10 animate-pulse" style={{ animationDelay: "1s" }}></div>
-            <div className="absolute bottom-1/4 -right-8 w-12 h-12 bg-gradient-to-r from-primary-300 to-pink-400 rounded-full opacity-15 -z-10 animate-pulse" style={{ animationDelay: "2s" }}></div>
+            <div
+              className="absolute top-1/2 -left-12 w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-20 -z-10 animate-pulse"
+              style={{ animationDelay: "1s" }}
+            ></div>
+            <div
+              className="absolute bottom-1/4 -right-8 w-12 h-12 bg-gradient-to-r from-primary-300 to-pink-400 rounded-full opacity-15 -z-10 animate-pulse"
+              style={{ animationDelay: "2s" }}
+            ></div>
           </div>
         </div>
       </div>

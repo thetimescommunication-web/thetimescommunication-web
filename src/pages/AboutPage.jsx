@@ -12,19 +12,19 @@ const AboutPage = () => {
   const stats = [
     {
       icon: FaAward,
-      number: "10+",
+      number: "5+",
       label: "Years Experience",
       color: "text-primary-600",
     },
     {
       icon: FaUsers,
-      number: "500+",
+      number: "50+",
       label: "Happy Clients",
       color: "text-blue-600",
     },
     {
       icon: FaProjectDiagram,
-      number: "1000+",
+      number: "150+",
       label: "Projects Completed",
       color: "text-green-600",
     },
@@ -114,23 +114,17 @@ const AboutPage = () => {
               </h2>
               <div className="prose prose-lg text-gray-600 space-y-4">
                 <p>
-                  We are a group of passionate and experienced{" "}
-                  <strong>Filmmakers</strong> who decided to start a new journey
-                  and help medium-sized businesses to grow with videos and
-                  marketing by reaching the right audience.
-                </p>
-                <p>
-                  With over <strong>10+ years</strong> of industry experience
-                  working with global brands and many big video production
-                  houses in Mumbai like VIACOM 18 MOTION PICTURE, SALAM BOMBAY
-                  FOUNDATION, and MTV to produce commercials and videos with
-                  sky-high production value, we came together to make our dream
-                  of producing enterprise-grade videos come true.
-                </p>
-                <p>
-                  Our aim is to make artistic videos by putting in a filmmaker's
-                  ideology while maintaining the highest standards of
-                  professionalism and creativity.
+                  The Times Communication is a creative film and media
+                  production house based in Rajkot, Gujarat, driven by a passion
+                  for powerful visual storytelling. We specialize in crafting
+                  corporate films, brand stories, real estate walkthroughs, and
+                  institutional videos for hospitals and educational institutes,
+                  helping businesses communicate with clarity and impact. With a
+                  strong focus on creativity, precision, and global-standard
+                  production quality, we approach every project with a
+                  filmmaker’s mindset—transforming ideas into engaging visuals
+                  that connect with the right audience and leave a lasting
+                  impression.
                 </p>
               </div>
             </div>
@@ -142,7 +136,8 @@ const AboutPage = () => {
                 loading="lazy"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = "https://via.placeholder.com/1200x800/009292/ffffff?text=The+Times+Communication";
+                  e.target.src =
+                    "https://via.placeholder.com/1200x800/009292/ffffff?text=The+Times+Communication";
                 }}
               />
             </div>
@@ -245,7 +240,8 @@ const AboutPage = () => {
                   loading="lazy"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "https://via.placeholder.com/300x300/009292/ffffff?text=Team";
+                    e.target.src =
+                      "https://via.placeholder.com/300x300/009292/ffffff?text=Team";
                   }}
                 />
                 <div className="p-6">
