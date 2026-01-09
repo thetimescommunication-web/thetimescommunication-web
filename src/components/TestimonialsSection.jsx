@@ -36,7 +36,7 @@ const TestimonialsSection = () => {
       position: "Marketing Manager",
       company: "Tech Solutions Inc.",
       content:
-        "The quality of the final video was really good. The team at Vastvik Films was also very responsive throughout the process, providing regular updates and taking our feedback to ensure that the final video was exactly what we wanted.",
+        "The quality of the final video was really good. The team at The Times Communication was also very responsive throughout the process, providing regular updates and taking our feedback to ensure that the final video was exactly what we wanted.",
       rating: 5,
       image: "/api/placeholder/80/80",
     },
@@ -46,7 +46,7 @@ const TestimonialsSection = () => {
       position: "Business Owner",
       company: "Digital Marketing Agency",
       content:
-        "I recently worked with Vastvik Films on a video project and I couldn't be happier with the results. From start to finish, the team at Vastvik Films was professional.",
+        "I recently worked with The Times Communication on a video project and I couldn't be happier with the results. From start to finish, the team was professional.",
       rating: 5,
       image: "/api/placeholder/80/80",
     },
@@ -56,11 +56,37 @@ const TestimonialsSection = () => {
       position: "Data Specialist",
       company: "Xerox",
       content:
-        "We had a great experience working with Vastvik Films in Mumbai. Their team was professional, and the final product was delivered on time. The video quality was outstanding! A fantastic video production house in the city",
+        "We had a great experience working with The Times Communication in Gujarat. Their team was professional, and the final product was delivered on time. The video quality was outstanding! A fantastic video production house in the region",
       rating: 5,
       image: "/api/placeholder/80/80",
     },
   ];
+
+  // Define which logos need dark backgrounds (white/light logos)
+  const darkBgLogos = [
+    "mission-mangalam.png",
+    "minister.png",
+    "goverment-of-gujarat-logo.png"
+  ];
+
+  // Define logos that need colored backgrounds (government logos)
+  const coloredBgLogos = [
+    "Swach-Bharat-Abhiyan-Logo-Vector.svg-.png"
+  ];
+
+  const getLogoContainerClass = (logoSrc) => {
+    const logoFileName = logoSrc.split('/').pop();
+    const needsDarkBg = darkBgLogos.some(darkLogo => logoFileName.includes(darkLogo));
+    const needsColoredBg = coloredBgLogos.some(coloredLogo => logoFileName.includes(coloredLogo));
+    
+    if (needsColoredBg) {
+      return "flex items-center justify-center w-32 h-20 bg-orange-500 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex-shrink-0";
+    } else if (needsDarkBg) {
+      return "flex items-center justify-center w-32 h-20 bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex-shrink-0";
+    } else {
+      return "flex items-center justify-center w-32 h-20 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex-shrink-0";
+    }
+  };
 
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) =>
@@ -78,6 +104,41 @@ const TestimonialsSection = () => {
     setCurrentTestimonial(index);
   };
 
+  // Define all logos in order
+  const row1Logos = [
+    { src: "/images/brnad-logo/653-6539668_smart-citi-logo-rock-werchter-hd-png-download.png", alt: "Smart City" },
+    { src: "/images/brnad-logo/94-fm.png", alt: "94 FM" },
+    { src: "/images/brnad-logo/aajivika.png", alt: "Aajivika" },
+    { src: "/images/brnad-logo/AATOMIZE.png", alt: "Aatomize" },
+    { src: "/images/brnad-logo/ADB-LOGO.png", alt: "ADB" },
+    { src: "/images/brnad-logo/agri-science.png", alt: "Agri Science" },
+    { src: "/images/brnad-logo/atal-sarovar.png", alt: "Atal Sarovar" },
+    { src: "/images/brnad-logo/balaji-wefers.png", alt: "Balaji Wefers" },
+    { src: "/images/brnad-logo/clarnigo-logo.png", alt: "Clarnigo" },
+    { src: "/images/brnad-logo/collector.png", alt: "Collector" },
+    { src: "/images/brnad-logo/Cube.png", alt: "Cube" },
+    { src: "/images/brnad-logo/drashti-art-zone.png", alt: "Drashti Art Zone" },
+    { src: "/images/brnad-logo/Gopal-namkeen.png", alt: "Gopal Namkeen" },
+    { src: "/images/brnad-logo/goverment-of-gujarat-logo.png", alt: "Government of Gujarat" },
+  ];
+
+  const row2Logos = [
+    { src: "/images/brnad-logo/gujarat-fish.png", alt: "Gujarat Fish" },
+    { src: "/images/brnad-logo/gujarat-polish.png", alt: "Gujarat Polish" },
+    { src: "/images/brnad-logo/gujarat-tourisom.png", alt: "Gujarat Tourism" },
+    { src: "/images/brnad-logo/Gurukul-rajkot.png", alt: "Gurukul Rajkot" },
+    { src: "/images/brnad-logo/LNT.png", alt: "LNT" },
+    { src: "/images/brnad-logo/maahi-milk.png", alt: "Maahi Milk" },
+    { src: "/images/brnad-logo/minister.png", alt: "Minister" },
+    { src: "/images/brnad-logo/mission-mangalam.png", alt: "Mission Mangalam" },
+    { src: "/images/brnad-logo/noble.png", alt: "Noble" },
+    { src: "/images/brnad-logo/rmc.png", alt: "RMC" },
+    { src: "/images/brnad-logo/sadbhavna.png", alt: "Sadbhavna" },
+    { src: "/images/brnad-logo/sport-authority.png", alt: "Sport Authority" },
+    { src: "/images/brnad-logo/Swach-Bharat-Abhiyan-Logo-Vector.svg-.png", alt: "Swach Bharat Abhiyan" },
+    { src: "/images/brnad-logo/vibrant-gujarat.png", alt: "Vibrant Gujarat" },
+  ];
+
   return (
     <section className="section-padding bg-gray-50" id="testimonials">
       <div className="container-custom">
@@ -91,7 +152,7 @@ const TestimonialsSection = () => {
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Don't just take our word for it. Here's what our clients say about
-            working with Vastvik Films.
+            working with The Times Communication.
           </p>
         </div>
 
@@ -181,68 +242,79 @@ const TestimonialsSection = () => {
           </div>
         </div>
 
-        {/* Client Logos */}
+        {/* Brand Logos - Infinite Scroll */}
         <div className="mt-20 animate-fade-in">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              THEY TURN TO US FOR{" "}
-              <span className="text-gradient">EXCELLENCE</span>
+              TRUSTED BY <span className="text-gradient">LEADING BRANDS</span>
             </h3>
             <p className="text-gray-600">
-              Trusted by leading brands and companies worldwide
+              Excellence recognized by industry leaders
             </p>
           </div>
 
-          {/* Client Logos Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center opacity-70">
-            <div className="bg-white rounded-lg p-4 w-full h-24 flex items-center justify-center hover:opacity-100 transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100">
-              <img
-                src="https://www.freepnglogos.com/uploads/microsoft-logo-4.png"
-                alt="Microsoft logo"
-                className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                loading="lazy"
-              />
-            </div>
-            <div className="bg-white rounded-lg p-4 w-full h-24 flex items-center justify-center hover:opacity-100 transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100">
-              <img
-                src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"
-                alt="Google logo"
-                className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                loading="lazy"
-              />
-            </div>
-            <div className="bg-white rounded-lg p-4 w-full h-24 flex items-center justify-center hover:opacity-100 transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100">
-              <img
-                src="https://www.freepnglogos.com/uploads/apple-logo-png/apple-logo-png-dallas-shootings-don-add-are-speech-zones-used-4.png"
-                alt="Apple logo"
-                className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                loading="lazy"
-              />
-            </div>
-            <div className="bg-white rounded-lg p-4 w-full h-24 flex items-center justify-center hover:opacity-100 transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100">
-              <img
-                src="https://www.freepnglogos.com/uploads/amazon-png-logo-vector/amazon-png-logo-vector-1.png"
-                alt="Amazon logo"
-                className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                loading="lazy"
-              />
-            </div>
-            <div className="bg-white rounded-lg p-4 w-full h-24 flex items-center justify-center hover:opacity-100 transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100">
-              <img
-                src="https://www.freepnglogos.com/uploads/ibm-logo-png/ibm-logo-png-transparent-svg-vector-4.png"
-                alt="IBM logo"
-                className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                loading="lazy"
-              />
-            </div>
-            <div className="bg-white rounded-lg p-4 w-full h-24 flex items-center justify-center hover:opacity-100 transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100">
-              <img
-                src="https://www.freepnglogos.com/uploads/oracle-logo-png/oracle-logo-png-oracle-logo-png-transparent-svg-vector-5.png"
-                alt="Oracle logo"
-                  className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                  loading="lazy"
-                />
+          {/* First Row - Scrolling Left */}
+          <div className="relative overflow-hidden mb-8">
+            <div className="flex animate-scroll-left">
+              {/* First set of logos */}
+              <div className="flex items-center space-x-8 min-w-max">
+                {row1Logos.map((logo, index) => (
+                  <div key={`row1-${index}`} className={getLogoContainerClass(logo.src)}>
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="max-w-full max-h-full object-contain p-2"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
               </div>
+              {/* Duplicate set for seamless loop */}
+              <div className="flex items-center space-x-8 min-w-max">
+                {row1Logos.map((logo, index) => (
+                  <div key={`row1-duplicate-${index}`} className={getLogoContainerClass(logo.src)}>
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="max-w-full max-h-full object-contain p-2"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Second Row - Scrolling Right */}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll-right">
+              {/* First set of logos */}
+              <div className="flex items-center space-x-8 min-w-max">
+                {row2Logos.map((logo, index) => (
+                  <div key={`row2-${index}`} className={getLogoContainerClass(logo.src)}>
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="max-w-full max-h-full object-contain p-2"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+              {/* Duplicate set for seamless loop */}
+              <div className="flex items-center space-x-8 min-w-max">
+                {row2Logos.map((logo, index) => (
+                  <div key={`row2-duplicate-${index}`} className={getLogoContainerClass(logo.src)}>
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="max-w-full max-h-full object-contain p-2"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
