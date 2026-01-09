@@ -22,10 +22,14 @@ This project is configured for deployment on Cloudflare Pages.
    - Select your repository
 
 3. **Configure Build Settings**
-   - **Framework preset**: Vite
+   - **Framework preset**: Vite (or leave blank)
    - **Build command**: `npm run build`
-   - **Build output directory**: `dist`
+   - **Build output directory**: `dist` (no leading slash)
    - **Root directory**: `/` (leave as default)
+   - **Deploy command**: `npx wrangler pages deploy dist` (required if field is mandatory)
+   - **Non-production branch deploy command**: `npx wrangler pages deploy dist` (optional, can leave empty)
+   - **Path**: `dist` (no leading slash)
+   - **⚠️ Important**: Use `wrangler pages deploy` (not `wrangler deploy` which is for Workers)
 
 4. **Environment Variables** (if needed)
    - Add any environment variables your app requires
@@ -66,3 +70,29 @@ After deployment, you can add a custom domain:
 1. Go to your project in Cloudflare Pages
 2. Click **Custom domains**
 3. Add your domain and follow the DNS setup instructions
+
+## Troubleshooting
+
+### Error: "The entry-point file at 'workers-site/index.js' was not found"
+
+This error occurs if the wrong wrangler command is used. To fix:
+
+1. **Use the correct deploy command**
+   - ✅ Correct: `npx wrangler pages deploy dist` (for Pages)
+   - ❌ Wrong: `wrangler deploy` (for Workers)
+   - ❌ Wrong: `wrangler pages deploy` without `dist`
+
+2. **Check your build settings**
+   - Build command: `npm run build`
+   - Build output directory: `dist` (no leading slash)
+   - Deploy command: `npx wrangler pages deploy dist`
+   - Path: `dist` (no leading slash)
+
+3. **Verify you're using Cloudflare Pages**
+   - Make sure you're in the **Pages** section of the dashboard, not **Workers & Pages** → **Workers**
+
+### Build succeeds but deployment fails
+
+- Ensure the `_redirects` file exists in your `public` folder (it will be copied to `dist` during build)
+- Check that your `dist` folder contains `index.html` after building
+- Verify Node.js version compatibility (your project requires Node >=18.0.0)
