@@ -136,10 +136,14 @@ const AboutPage = () => {
             </div>
             <div className="animate-fade-in">
               <img
-                src="/api/placeholder/600/400"
-                alt="Vastvik Films team at work"
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop&q=80&auto=format"
+                alt="Corporate video interview setup in modern office"
                 className="w-full h-auto rounded-lg shadow-lg"
                 loading="lazy"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "https://via.placeholder.com/1200x800/009292/ffffff?text=The+Times+Communication";
+                }}
               />
             </div>
           </div>
@@ -239,6 +243,10 @@ const AboutPage = () => {
                   alt={member.name}
                   className="w-full h-64 object-cover"
                   loading="lazy"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "https://via.placeholder.com/300x300/009292/ffffff?text=Team";
+                  }}
                 />
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">

@@ -10,10 +10,7 @@ import {
   FaMusic,
   FaHome,
   FaCheck,
-  FaArrowRight,
-  FaClock,
-  FaDollarSign,
-  FaUsers,
+  
 } from "react-icons/fa";
 
 const ServicesPage = () => {
@@ -32,7 +29,7 @@ const ServicesPage = () => {
       ],
       startingPrice: "$2,500",
       duration: "2-3 weeks",
-      image: "/api/placeholder/500/300",
+      image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&h=400&fit=crop&q=80",
     },
     {
       icon: FaGraduationCap,
@@ -48,7 +45,7 @@ const ServicesPage = () => {
       ],
       startingPrice: "$3,000",
       duration: "3-4 weeks",
-      image: "/api/placeholder/500/300",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop&q=80",
     },
     {
       icon: FaBuilding,
@@ -64,7 +61,7 @@ const ServicesPage = () => {
       ],
       startingPrice: "$4,000",
       duration: "3-5 weeks",
-      image: "/api/placeholder/500/300",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80",
     },
     {
       icon: FaTv,
@@ -80,7 +77,7 @@ const ServicesPage = () => {
       ],
       startingPrice: "$8,000",
       duration: "4-6 weeks",
-      image: "/api/placeholder/500/300",
+      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=400&fit=crop&q=80",
     },
     {
       icon: FaCamera,
@@ -96,7 +93,7 @@ const ServicesPage = () => {
       ],
       startingPrice: "$1,500",
       duration: "1-2 weeks",
-      image: "/api/placeholder/500/300",
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop&q=80",
     },
     {
       icon: FaShare,
@@ -112,7 +109,7 @@ const ServicesPage = () => {
       ],
       startingPrice: "$800",
       duration: "1 week",
-      image: "/api/placeholder/500/300",
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop&q=80",
     },
     {
       icon: FaMusic,
@@ -128,7 +125,7 @@ const ServicesPage = () => {
       ],
       startingPrice: "$10,000",
       duration: "6-8 weeks",
-      image: "/api/placeholder/500/300",
+      image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&q=80",
     },
     {
       icon: FaHome,
@@ -144,7 +141,7 @@ const ServicesPage = () => {
       ],
       startingPrice: "$2,000",
       duration: "1-2 weeks",
-      image: "/api/placeholder/500/300",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop&q=80",
     },
   ];
 
@@ -233,46 +230,26 @@ const ServicesPage = () => {
                     ))}
                   </ul>
 
-                  {/* Service Details */}
-                  <div className="grid grid-cols-3 gap-4 mb-6">
-                    <div className="text-center p-3 bg-gray-50 rounded-lg">
-                      <FaDollarSign className="text-primary-600 text-xl mx-auto mb-2" />
-                      <div className="text-sm text-gray-600">Starting at</div>
-                      <div className="font-semibold text-gray-900">
-                        {service.startingPrice}
-                      </div>
-                    </div>
-                    <div className="text-center p-3 bg-gray-50 rounded-lg">
-                      <FaClock className="text-primary-600 text-xl mx-auto mb-2" />
-                      <div className="text-sm text-gray-600">Timeline</div>
-                      <div className="font-semibold text-gray-900">
-                        {service.duration}
-                      </div>
-                    </div>
-                    <div className="text-center p-3 bg-gray-50 rounded-lg">
-                      <FaUsers className="text-primary-600 text-xl mx-auto mb-2" />
-                      <div className="text-sm text-gray-600">Team</div>
-                      <div className="font-semibold text-gray-900">Expert</div>
-                    </div>
-                  </div>
+                  
 
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center space-x-2 btn-primary group"
-                  >
-                    <span>Get Quote</span>
-                    <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
-                  </Link>
+                  
                 </div>
 
                 {/* Image */}
                 <div className={index % 2 === 1 ? "lg:col-start-1" : ""}>
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-auto rounded-lg shadow-lg"
-                    loading="lazy"
-                  />
+                  <div className="relative overflow-hidden rounded-lg shadow-lg group">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-auto rounded-lg transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                      onError={(e) => {
+                        // Fallback to placeholder if image doesn't exist
+                        e.target.src = `https://via.placeholder.com/600x400/009292/ffffff?text=${encodeURIComponent(service.title)}`;
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
                 </div>
               </div>
             ))}

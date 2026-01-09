@@ -1,27 +1,105 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   FaPlay,
-  FaFilter,
   FaExternalLinkAlt,
   FaCalendarAlt,
+  FaYoutube,
+  FaSpinner,
+  FaTimes,
 } from "react-icons/fa";
 
 const PortfolioPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [playlists, setPlaylists] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [expandedDescriptions, setExpandedDescriptions] = useState({});
 
-  const categories = [
-    "All",
-    "Explainer Videos",
-    "E-Learning Videos",
-    "Corporate Videos",
-    "Product Photography",
-    "TV & Digital Ad Films",
-    "Social Media Promo",
-    "Music & Film",
-    "Real Estate Videos",
-  ];
+  // Toggle description expansion
+  const toggleDescription = (itemId) => {
+    setExpandedDescriptions(prev => ({
+      ...prev,
+      [itemId]: !prev[itemId]
+    }));
+  };
+
+  // Truncate description helper
+  const truncateDescription = (text, maxLength = 120) => {
+    if (!text || text.length <= maxLength) return { text, isLong: false };
+    return {
+      text: text.substring(0, maxLength).trim() + '...',
+      fullText: text,
+      isLong: true
+    };
+  };
+
+  // YouTube API Configuration
+  const YOUTUBE_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY?.trim();
+  const CHANNEL_ID = import.meta.env.VITE_YOUTUBE_CHANNEL_ID?.trim();
+
+  // Fetch YouTube Playlists
+  useEffect(() => {
+    const fetchPlaylists = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        if (!YOUTUBE_API_KEY || !CHANNEL_ID) {
+          console.error('Environment variables:', {
+            apiKey: YOUTUBE_API_KEY ? 'Present' : 'Missing',
+            channelId: CHANNEL_ID ? 'Present' : 'Missing',
+            allEnv: import.meta.env
+          });
+          throw new Error('YouTube API key or Channel ID is missing. Please check your .env file and restart the dev server.');
+        }
+        
+        const response = await fetch(
+          `https://www.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&channelId=${CHANNEL_ID}&maxResults=100&key=${YOUTUBE_API_KEY}`
+        );
+
+        if (!response.ok) {
+          throw new Error(`YouTube API error: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (data.items && data.items.length > 0) {
+          // Transform YouTube playlists to portfolio items format
+          const transformedPlaylists = data.items.map((playlist, index) => {
+            const snippet = playlist.snippet;
+            const contentDetails = playlist.contentDetails;
+            
+            return {
+              id: playlist.id,
+              title: snippet.title,
+              thumbnail: snippet.thumbnails?.high?.url || snippet.thumbnails?.medium?.url || snippet.thumbnails?.default?.url,
+              videoUrl: `https://www.youtube.com/playlist?list=${playlist.id}`,
+              embedUrl: `https://www.youtube.com/embed/videoseries?list=${playlist.id}`,
+              client: snippet.channelTitle || "The Times Communication",
+              year: new Date(snippet.publishedAt).getFullYear().toString(),
+              description: snippet.description || snippet.localized?.description || "Check out our video collection on YouTube.",
+              tags: snippet.tags || [],
+              duration: `${contentDetails.itemCount || 0} videos`,
+              publishedAt: snippet.publishedAt,
+              viewCount: contentDetails.itemCount || 0,
+            };
+          });
+
+          setPlaylists(transformedPlaylists);
+        } else {
+          setPlaylists([]);
+        }
+      } catch (err) {
+        console.error("Error fetching YouTube playlists:", err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPlaylists();
+  }, []);
 
   const portfolioItems = [
     {
@@ -182,14 +260,8 @@ const PortfolioPage = () => {
     },
   ];
 
-  const filteredItems =
-    selectedCategory === "All"
-      ? portfolioItems
-      : portfolioItems.filter((item) => item.category === selectedCategory);
-
-  const toggleFilter = () => {
-    setIsFilterOpen(!isFilterOpen);
-  };
+  // Use YouTube playlists if available, otherwise fall back to static items
+  const displayItems = playlists.length > 0 ? playlists : portfolioItems;
 
   return (
     <div>
@@ -206,62 +278,56 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      {/* Filter Section */}
-      <section className="py-8 bg-white sticky top-16 z-40 border-b">
+      {/* Info Section */}
+      {!loading && playlists.length > 0 && (
+        <section className="py-8 bg-gradient-to-r from-gray-50 to-white border-b border-gray-200">
         <div className="container-custom">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <p className="text-gray-600">
-                Showing {filteredItems.length} of {portfolioItems.length}{" "}
-                projects
-              </p>
+            <div className="flex items-center justify-center gap-3">
+              <div className="flex items-center gap-2 text-primary-600">
+                <FaYoutube className="text-xl" />
+                <span className="text-lg font-semibold text-gray-900">
+                  {displayItems.length}
+                </span>
             </div>
-
-            {/* Mobile Filter Button */}
-            <div className="md:hidden mb-4">
-              <button
-                onClick={toggleFilter}
-                className="flex items-center space-x-2 px-4 py-2 bg-primary-600 text-white rounded-lg"
-              >
-                <FaFilter />
-                <span>Filter</span>
-              </button>
-            </div>
-
-            {/* Filter Categories */}
-            <div
-              className={`w-full md:w-auto ${
-                isFilterOpen ? "block" : "hidden md:block"
-              }`}
-            >
-              <div className="flex flex-wrap justify-center md:justify-end gap-2">
-                {categories.map((category, index) => (
-                  <button
-                    key={index}
-                    onClick={() => {
-                      setSelectedCategory(category);
-                      setIsFilterOpen(false);
-                    }}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                      selectedCategory === category
-                        ? "bg-primary-600 text-white shadow-lg"
-                        : "bg-gray-100 text-gray-600 hover:bg-primary-100 hover:text-primary-600"
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
-            </div>
+              <span className="text-gray-600 font-medium">
+                {playlists.length > 0 ? 'Playlists' : 'Projects'} Available
+              </span>
           </div>
         </div>
       </section>
+      )}
 
       {/* Portfolio Grid */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
+          {/* Loading State */}
+          {loading && (
+            <div className="flex flex-col items-center justify-center py-20">
+              <FaSpinner className="animate-spin text-primary-600 text-4xl mb-4" />
+              <p className="text-gray-600">Loading YouTube playlists...</p>
+            </div>
+          )}
+
+          {/* Error State */}
+          {error && !loading && (
+            <div className="bg-red-50 border border-red-200 rounded-lg p-6 mb-8">
+              <p className="text-red-800 font-semibold mb-2">Error loading playlists</p>
+              <p className="text-red-600 text-sm">{error}</p>
+              <p className="text-gray-600 text-sm mt-4">
+                Showing static portfolio items instead.
+              </p>
+            </div>
+          )}
+
+          {/* Portfolio Grid */}
+          {!loading && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredItems.map((item, index) => (
+              {displayItems.length === 0 ? (
+                <div className="col-span-full text-center py-12">
+                  <p className="text-gray-600 text-lg">No playlists found.</p>
+                </div>
+              ) : (
+                displayItems.map((item, index) => (
               <div
                 key={item.id}
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in"
@@ -278,19 +344,27 @@ const PortfolioPage = () => {
 
                   {/* Play Button Overlay */}
                   <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <button className="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all duration-300 transform hover:scale-110">
+                    <button 
+                      onClick={() => {
+                        window.open(item.videoUrl, '_blank');
+                      }}
+                      className="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all duration-300 transform hover:scale-110"
+                    >
                       <FaPlay className="text-white text-xl ml-1" />
                     </button>
                   </div>
 
+                  {/* YouTube Badge */}
+                  {item.embedUrl && (
+                    <div className="absolute top-4 right-4 bg-red-600 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
+                      <FaYoutube className="text-xs" />
+                      <span>YouTube</span>
+                    </div>
+                  )}
+
                   {/* Duration Badge */}
                   <div className="absolute bottom-4 right-4 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
                     {item.duration}
-                  </div>
-
-                  {/* Category Badge */}
-                  <div className="absolute top-4 left-4 bg-primary-600 text-white text-xs px-3 py-1 rounded-full">
-                    {item.category}
                   </div>
                 </div>
 
@@ -307,9 +381,30 @@ const PortfolioPage = () => {
                     {item.title}
                   </h3>
 
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                    {item.description}
-                  </p>
+                  <div className="text-gray-600 text-sm leading-relaxed mb-4">
+                    {(() => {
+                      const isExpanded = expandedDescriptions[item.id];
+                      const truncated = truncateDescription(item.description || '', 120);
+                      
+                      if (!truncated.isLong) {
+                        return <p className="text-justify">{truncated.text}</p>;
+                      }
+                      
+                      return (
+                        <div>
+                          <p className="mb-1 text-justify">{isExpanded ? truncated.fullText : truncated.text}</p>
+                          <div className="flex justify-end">
+                            <button
+                              onClick={() => toggleDescription(item.id)}
+                              className="text-primary-600 hover:text-primary-700 font-medium text-xs transition-colors duration-300"
+                            >
+                              {isExpanded ? 'Read less' : 'Read more'}
+                            </button>
+                          </div>
+                        </div>
+                      );
+                    })()}
+                  </div>
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -324,23 +419,22 @@ const PortfolioPage = () => {
                   </div>
 
                   {/* Action Button */}
-                  <button className="flex items-center space-x-2 text-primary-600 hover:text-primary-700 font-medium group">
-                    <span>View Project</span>
+                  <button 
+                    onClick={() => {
+                      window.open(item.videoUrl, '_blank');
+                    }}
+                    className="flex items-center space-x-2 text-primary-600 hover:text-primary-700 font-medium group"
+                  >
+                    <span>Watch Playlist</span>
                     <FaExternalLinkAlt className="group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
                 </div>
               </div>
-            ))}
-          </div>
-
-          {/* Load More Button */}
-          {filteredItems.length >= 9 && (
-            <div className="text-center mt-12">
-              <button className="btn-primary px-8 py-3">
-                Load More Projects
-              </button>
+                ))
+              )}
             </div>
           )}
+
         </div>
       </section>
 
@@ -370,6 +464,82 @@ const PortfolioPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Video Modal */}
+      {selectedVideo && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4"
+          onClick={() => setSelectedVideo(null)}
+        >
+          <div 
+            className="relative w-full max-w-5xl bg-black rounded-lg overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedVideo(null)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 bg-black bg-opacity-50 text-white rounded-full flex items-center justify-center hover:bg-opacity-70 transition-all duration-300"
+              aria-label="Close video"
+            >
+              <FaTimes size={20} />
+            </button>
+
+            {/* Video Embed */}
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                src={selectedVideo.embedUrl}
+                title={selectedVideo.title}
+                className="absolute top-0 left-0 w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+
+            {/* Video Info */}
+            <div className="p-6 bg-gray-900 text-white">
+              <h3 className="text-xl font-semibold mb-2">{selectedVideo.title}</h3>
+              <div className="text-gray-300 text-sm mb-4">
+                {(() => {
+                  const isExpanded = expandedDescriptions[`modal-${selectedVideo.id}`];
+                  const truncated = truncateDescription(selectedVideo.description || '', 120);
+                  
+                  if (!truncated.isLong) {
+                    return <p className="text-justify">{truncated.text}</p>;
+                  }
+                  
+                  return (
+                    <div>
+                      <p className="mb-1 text-justify">{isExpanded ? truncated.fullText : truncated.text}</p>
+                      <div className="flex justify-end">
+                        <button
+                          onClick={() => toggleDescription(`modal-${selectedVideo.id}`)}
+                          className="text-primary-400 hover:text-primary-300 font-medium text-xs transition-colors duration-300"
+                        >
+                          {isExpanded ? 'Read less' : 'Read more'}
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+              <div className="flex items-center gap-4 text-sm text-gray-400">
+                <span>{selectedVideo.duration}</span>
+                {selectedVideo.year && <span>• {selectedVideo.year}</span>}
+              </div>
+              <a
+                href={selectedVideo.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-4 text-primary-400 hover:text-primary-300 transition-colors"
+              >
+                <FaYoutube />
+                <span>Watch on YouTube</span>
+                <FaExternalLinkAlt className="text-xs" />
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

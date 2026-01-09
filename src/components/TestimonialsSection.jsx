@@ -195,20 +195,54 @@ const TestimonialsSection = () => {
 
           {/* Client Logos Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center opacity-70">
-            {/* Replace with actual client logos */}
-            {[...Array(6)].map((_, index) => (
-              <div
-                key={index}
-                className="bg-gray-200 rounded-lg p-4 w-full h-20 flex items-center justify-center hover:opacity-100 transition-opacity duration-300"
-              >
-                <img
-                  src={`/api/placeholder/120/60`}
-                  alt={`Client ${index + 1} logo`}
+            <div className="bg-white rounded-lg p-4 w-full h-24 flex items-center justify-center hover:opacity-100 transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100">
+              <img
+                src="https://www.freepnglogos.com/uploads/microsoft-logo-4.png"
+                alt="Microsoft logo"
+                className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                loading="lazy"
+              />
+            </div>
+            <div className="bg-white rounded-lg p-4 w-full h-24 flex items-center justify-center hover:opacity-100 transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100">
+              <img
+                src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"
+                alt="Google logo"
+                className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                loading="lazy"
+              />
+            </div>
+            <div className="bg-white rounded-lg p-4 w-full h-24 flex items-center justify-center hover:opacity-100 transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100">
+              <img
+                src="https://www.freepnglogos.com/uploads/apple-logo-png/apple-logo-png-dallas-shootings-don-add-are-speech-zones-used-4.png"
+                alt="Apple logo"
+                className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                loading="lazy"
+              />
+            </div>
+            <div className="bg-white rounded-lg p-4 w-full h-24 flex items-center justify-center hover:opacity-100 transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100">
+              <img
+                src="https://www.freepnglogos.com/uploads/amazon-png-logo-vector/amazon-png-logo-vector-1.png"
+                alt="Amazon logo"
+                className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                loading="lazy"
+              />
+            </div>
+            <div className="bg-white rounded-lg p-4 w-full h-24 flex items-center justify-center hover:opacity-100 transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100">
+              <img
+                src="https://www.freepnglogos.com/uploads/ibm-logo-png/ibm-logo-png-transparent-svg-vector-4.png"
+                alt="IBM logo"
+                className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                loading="lazy"
+              />
+            </div>
+            <div className="bg-white rounded-lg p-4 w-full h-24 flex items-center justify-center hover:opacity-100 transition-all duration-300 shadow-sm hover:shadow-md border border-gray-100">
+              <img
+                src="https://www.freepnglogos.com/uploads/oracle-logo-png/oracle-logo-png-oracle-logo-png-transparent-svg-vector-5.png"
+                alt="Oracle logo"
                   className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
                   loading="lazy"
                 />
               </div>
-            ))}
           </div>
         </div>
       </div>

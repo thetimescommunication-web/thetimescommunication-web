@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from '@emailjs/browser';
 import {
   FaMapMarkerAlt,
   FaPhone,
@@ -8,6 +9,7 @@ import {
   FaUser,
   FaBuilding,
   FaComments,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 const ContactPage = () => {
@@ -64,10 +66,56 @@ const ContactPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus("");
 
-    // Simulate form submission
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      // EmailJS configuration
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS configuration is missing. Please check your .env file.');
+      }
+
+      // Format email content in code (no complex template needed)
+      const emailContent = `
+<h2 style="color: #009292;">New Contact Form Submission</h2>
+
+<div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+  <h3 style="color: #333; margin-top: 0;">Contact Information</h3>
+  <p><strong>Name:</strong> ${formData.name}</p>
+  <p><strong>Email:</strong> ${formData.email}</p>
+  <p><strong>Phone:</strong> ${formData.phone || 'Not provided'}</p>
+  <p><strong>Company:</strong> ${formData.company || 'Not provided'}</p>
+</div>
+
+<div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+  <h3 style="color: #333; margin-top: 0;">Project Details</h3>
+  <p><strong>Service Needed:</strong> ${formData.service || 'Not specified'}</p>
+  <p><strong>Budget Range:</strong> ${formData.budget || 'Not specified'}</p>
+  <p><strong>Timeline:</strong> ${formData.timeline || 'Not specified'}</p>
+</div>
+
+<div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+  <h3 style="color: #333; margin-top: 0;">Message</h3>
+  <p style="white-space: pre-wrap;">${formData.message}</p>
+</div>
+      `.trim();
+
+      // Prepare email template parameters (simple template - just pass the formatted content)
+      const templateParams = {
+        to_email: 'thetimescommunication@gmail.com',
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: `New Contact Form Submission from ${formData.name}`,
+        message: emailContent,
+        reply_to: formData.email,
+      };
+
+      // Send email to company only
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
       setSubmitStatus("success");
       setFormData({
         name: "",
@@ -80,6 +128,7 @@ const ContactPage = () => {
         timeline: "",
       });
     } catch (error) {
+      console.error('Error submitting form:', error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -399,14 +448,17 @@ const ContactPage = () => {
                 <div className="bg-gradient-to-r from-primary-600 to-blue-600 rounded-lg p-6 text-white text-center">
                   <h3 className="text-xl font-bold mb-4">Need Quick Help?</h3>
                   <p className="mb-6">
-                    Call us directly for immediate assistance or urgent
+                    Message us on WhatsApp for immediate assistance or urgent
                     projects.
                   </p>
                   <a
-                    href="tel:+919426916374"
-                    className="btn-outline hover:bg-white hover:text-primary-600 block"
+                    href="https://wa.me/919426916374?text=Hello%20The%20Times%20Communication!%20I%20would%20like%20to%20discuss%20a%20video%20production%20project%20with%20you."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-outline hover:bg-white hover:text-primary-600 block flex items-center justify-center space-x-2"
                   >
-                    Call Now: +91 94269 16374
+                    <FaWhatsapp className="text-xl" />
+                    <span>Message on WhatsApp</span>
                   </a>
                 </div>
               </div>
@@ -415,17 +467,54 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Map Section - Placeholder */}
-      <section className="h-96 bg-gray-200 relative">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <FaMapMarkerAlt className="text-primary-600 text-6xl mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              Visit Our Offices
-            </h3>
-            <p className="text-gray-600">
-              Interactive map integration would be implemented here
+      {/* Map Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Visit Our <span className="text-gradient">Office</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              121, 122 - Arthik Bhavan, Near Pinevinta Hotel, Gondal Road, Rajkot - 360004 Gujarat India
             </p>
+          </div>
+          
+          <div className="relative rounded-lg overflow-hidden shadow-2xl">
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                src="https://www.google.com/maps?q=22.283304402773165,70.79996619091418&hl=en&z=15&output=embed"
+                width="100%"
+                height="100%"
+                style={{ position: 'absolute', top: 0, left: 0, border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="The Times Communication Office Location"
+              ></iframe>
+            </div>
+            
+            {/* Map Overlay Info */}
+            <div className="absolute bottom-4 left-4 bg-white rounded-lg p-4 shadow-lg max-w-xs">
+              <div className="flex items-start space-x-3">
+                <FaMapMarkerAlt className="text-primary-600 text-xl mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-1">The Times Communication</h4>
+                  <p className="text-sm text-gray-600">
+                    121, 122 - Arthik Bhavan<br />
+                    Near Pinevinta Hotel, Gondal Road<br />
+                    Rajkot - 360004, Gujarat, India
+                  </p>
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=22.283304402773165,70.79996619091418"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-600 hover:text-primary-700 text-sm font-medium mt-2 inline-block"
+                  >
+                    Get Directions →
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
