@@ -66,19 +66,21 @@ const TestimonialsSection = () => {
   const darkBgLogos = [
     "mission-mangalam.png",
     "minister.png",
-    "goverment-of-gujarat-logo.png"
+    "goverment-of-gujarat-logo.png",
   ];
 
   // Define logos that need colored backgrounds (government logos)
-  const coloredBgLogos = [
-    "Swach-Bharat-Abhiyan-Logo-Vector.svg-.png"
-  ];
+  const coloredBgLogos = ["Swach-Bharat-Abhiyan-Logo-Vector.svg-.png"];
 
   const getLogoContainerClass = (logoSrc) => {
-    const logoFileName = logoSrc.split('/').pop();
-    const needsDarkBg = darkBgLogos.some(darkLogo => logoFileName.includes(darkLogo));
-    const needsColoredBg = coloredBgLogos.some(coloredLogo => logoFileName.includes(coloredLogo));
-    
+    const logoFileName = logoSrc.split("/").pop();
+    const needsDarkBg = darkBgLogos.some((darkLogo) =>
+      logoFileName.includes(darkLogo)
+    );
+    const needsColoredBg = coloredBgLogos.some((coloredLogo) =>
+      logoFileName.includes(coloredLogo)
+    );
+
     if (needsColoredBg) {
       return "flex items-center justify-center w-32 h-20 bg-orange-500 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex-shrink-0";
     } else if (needsDarkBg) {
@@ -106,7 +108,10 @@ const TestimonialsSection = () => {
 
   // Define all logos in order
   const row1Logos = [
-    { src: "/images/brnad-logo/653-6539668_smart-citi-logo-rock-werchter-hd-png-download.png", alt: "Smart City" },
+    {
+      src: "/images/brnad-logo/653-6539668_smart-citi-logo-rock-werchter-hd-png-download.png",
+      alt: "Smart City",
+    },
     { src: "/images/brnad-logo/94-fm.png", alt: "94 FM" },
     { src: "/images/brnad-logo/aajivika.png", alt: "Aajivika" },
     { src: "/images/brnad-logo/AATOMIZE.png", alt: "Aatomize" },
@@ -119,7 +124,6 @@ const TestimonialsSection = () => {
     { src: "/images/brnad-logo/Cube.png", alt: "Cube" },
     { src: "/images/brnad-logo/drashti-art-zone.png", alt: "Drashti Art Zone" },
     { src: "/images/brnad-logo/Gopal-namkeen.png", alt: "Gopal Namkeen" },
-    { src: "/images/brnad-logo/goverment-of-gujarat-logo.png", alt: "Government of Gujarat" },
   ];
 
   const row2Logos = [
@@ -135,7 +139,10 @@ const TestimonialsSection = () => {
     { src: "/images/brnad-logo/rmc.png", alt: "RMC" },
     { src: "/images/brnad-logo/sadbhavna.png", alt: "Sadbhavna" },
     { src: "/images/brnad-logo/sport-authority.png", alt: "Sport Authority" },
-    { src: "/images/brnad-logo/Swach-Bharat-Abhiyan-Logo-Vector.svg-.png", alt: "Swach Bharat Abhiyan" },
+    {
+      src: "/images/brnad-logo/Swach-Bharat-Abhiyan-Logo-Vector.svg-.png",
+      alt: "Swach Bharat Abhiyan",
+    },
     { src: "/images/brnad-logo/vibrant-gujarat.png", alt: "Vibrant Gujarat" },
   ];
 
@@ -259,7 +266,10 @@ const TestimonialsSection = () => {
               {/* First set of logos */}
               <div className="flex items-center space-x-8 min-w-max">
                 {row1Logos.map((logo, index) => (
-                  <div key={`row1-${index}`} className={getLogoContainerClass(logo.src)}>
+                  <div
+                    key={`row1-${index}`}
+                    className={getLogoContainerClass(logo.src)}
+                  >
                     <img
                       src={logo.src}
                       alt={logo.alt}
@@ -272,7 +282,10 @@ const TestimonialsSection = () => {
               {/* Duplicate set for seamless loop */}
               <div className="flex items-center space-x-8 min-w-max">
                 {row1Logos.map((logo, index) => (
-                  <div key={`row1-duplicate-${index}`} className={getLogoContainerClass(logo.src)}>
+                  <div
+                    key={`row1-duplicate-${index}`}
+                    className={getLogoContainerClass(logo.src)}
+                  >
                     <img
                       src={logo.src}
                       alt={logo.alt}
@@ -291,7 +304,10 @@ const TestimonialsSection = () => {
               {/* First set of logos */}
               <div className="flex items-center space-x-8 min-w-max">
                 {row2Logos.map((logo, index) => (
-                  <div key={`row2-${index}`} className={getLogoContainerClass(logo.src)}>
+                  <div
+                    key={`row2-${index}`}
+                    className={getLogoContainerClass(logo.src)}
+                  >
                     <img
                       src={logo.src}
                       alt={logo.alt}
@@ -304,7 +320,10 @@ const TestimonialsSection = () => {
               {/* Duplicate set for seamless loop */}
               <div className="flex items-center space-x-8 min-w-max">
                 {row2Logos.map((logo, index) => (
-                  <div key={`row2-duplicate-${index}`} className={getLogoContainerClass(logo.src)}>
+                  <div
+                    key={`row2-duplicate-${index}`}
+                    className={getLogoContainerClass(logo.src)}
+                  >
                     <img
                       src={logo.src}
                       alt={logo.alt}
