@@ -154,7 +154,7 @@ const AboutSection = () => {
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                   <span className="text-sm font-semibold text-gray-900">
-                    10+ Years
+                    5+ Years
                   </span>
                 </div>
                 <div className="text-xs text-gray-600 mt-1">Experience</div>
