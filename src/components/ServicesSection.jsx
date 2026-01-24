@@ -33,7 +33,7 @@ const ServicesSection = () => {
       title: "Documentary Film",
       description:
         "Craft compelling documentary films that tell authentic stories with depth, emotion, and cinematic storytelling.",
-      image: "/images/services/documentry.png",
+      image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=250&fit=crop&q=80",
       delay: "0s",
     },
     {
@@ -41,7 +41,7 @@ const ServicesSection = () => {
       title: "Government Documentaries",
       description:
         "Produce informative and impactful government documentaries that communicate public initiatives with clarity and credibility.",
-      image: "/images/services/goverment.png",
+      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=250&fit=crop&q=80",
       delay: "0.1s",
     },
     {
@@ -49,7 +49,7 @@ const ServicesSection = () => {
       title: "Real Estate Walkthrough & Property Films",
       description:
         "Create immersive property walkthrough films that showcase spaces, design, and lifestyle with cinematic precision.",
-      image: "/images/services/corporate.png",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop&q=80",
       delay: "0.2s",
     },
     {
@@ -57,7 +57,7 @@ const ServicesSection = () => {
       title: "Brand Story Video Film",
       description:
         "Bring your brand's journey to life through powerful story-driven films that connect emotionally with your audience.",
-      image: "/images/services/brand_story.png",
+      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=250&fit=crop&q=80",
       delay: "0.3s",
     },
     {
@@ -65,7 +65,7 @@ const ServicesSection = () => {
       title: "Hospital & Healthcare Institutional Videos",
       description:
         "Develop trust-building healthcare films that highlight expertise, infrastructure, and patient-centric care.",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop&q=80",
       delay: "0.4s",
     },
     {
@@ -73,7 +73,7 @@ const ServicesSection = () => {
       title: "Educational Institution Film",
       description:
         "Produce engaging institutional films that showcase academic excellence, campus life, and educational values.",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=250&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&h=250&fit=crop&q=80",
       delay: "0.5s",
     },
     {
@@ -89,7 +89,7 @@ const ServicesSection = () => {
       title: "Social Media Video Content",
       description:
         "Create scroll-stopping social media videos optimized for reach, engagement, and platform performance.",
-      image: "https://images.unsplash.com/photo-1611162616305-c69b3fa6fad0?w=400&h=250&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop&q=80",
       delay: "0.7s",
     },
     {
@@ -105,7 +105,7 @@ const ServicesSection = () => {
       title: "Exhibition Shoot",
       description:
         "Capture exhibitions with dynamic visuals that highlight scale, interaction, and brand presence.",
-      image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=400&h=250&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=250&fit=crop&q=80",
       delay: "0.7s",
     },
     {
