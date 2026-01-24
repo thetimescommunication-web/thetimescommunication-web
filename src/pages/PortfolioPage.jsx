@@ -387,12 +387,24 @@ const PortfolioPage = () => {
                       const truncated = truncateDescription(item.description || '', 120);
                       
                       if (!truncated.isLong) {
-                        return <p className="text-justify">{truncated.text}</p>;
+                        return (
+                          <p 
+                            className="text-justify break-words" 
+                            style={{ hyphens: 'auto', WebkitHyphens: 'auto', msHyphens: 'auto' }}
+                          >
+                            {truncated.text}
+                          </p>
+                        );
                       }
                       
                       return (
                         <div>
-                          <p className="mb-1 text-justify">{isExpanded ? truncated.fullText : truncated.text}</p>
+                          <p 
+                            className="mb-1 text-justify break-words" 
+                            style={{ hyphens: 'auto', WebkitHyphens: 'auto', msHyphens: 'auto' }}
+                          >
+                            {isExpanded ? truncated.fullText : truncated.text}
+                          </p>
                           <div className="flex justify-end">
                             <button
                               onClick={() => toggleDescription(item.id)}
@@ -504,12 +516,24 @@ const PortfolioPage = () => {
                   const truncated = truncateDescription(selectedVideo.description || '', 120);
                   
                   if (!truncated.isLong) {
-                    return <p className="text-justify">{truncated.text}</p>;
+                    return (
+                      <p 
+                        className="text-justify break-words" 
+                        style={{ hyphens: 'auto', WebkitHyphens: 'auto', msHyphens: 'auto' }}
+                      >
+                        {truncated.text}
+                      </p>
+                    );
                   }
                   
                   return (
                     <div>
-                      <p className="mb-1 text-justify">{isExpanded ? truncated.fullText : truncated.text}</p>
+                      <p 
+                        className="mb-1 text-justify break-words" 
+                        style={{ hyphens: 'auto', WebkitHyphens: 'auto', msHyphens: 'auto' }}
+                      >
+                        {isExpanded ? truncated.fullText : truncated.text}
+                      </p>
                       <div className="flex justify-end">
                         <button
                           onClick={() => toggleDescription(`modal-${selectedVideo.id}`)}
