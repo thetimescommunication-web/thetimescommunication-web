@@ -215,7 +215,7 @@ const AboutPage = () => {
       </section>
 
       {/* Team Section */}
-      <section className="section-padding bg-gray-50">
+      {/* <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -257,7 +257,7 @@ const AboutPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Call to Action */}
       <section className="section-padding bg-gradient-to-r from-primary-600 to-blue-600">
