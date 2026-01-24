@@ -32,7 +32,7 @@ const ServicesSection = () => {
       icon: FaVideo,
       title: "Documentary Film",
       description:
-        "Create engaging animated explainer videos using cutting-edge AI technology to simplify complex concepts.",
+        "Craft compelling documentary films that tell authentic stories with depth, emotion, and cinematic storytelling.",
       image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=250&fit=crop&q=80",
       delay: "0s",
     },
@@ -40,7 +40,7 @@ const ServicesSection = () => {
       icon: FaGraduationCap,
       title: "Government Documentaries",
       description:
-        "Educational video content designed to enhance learning experiences with professional production quality.",
+        "Produce informative and impactful government documentaries that communicate public initiatives with clarity and credibility.",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop&q=80",
       delay: "0.1s",
     },
@@ -48,7 +48,7 @@ const ServicesSection = () => {
       icon: FaBuilding,
       title: "Real Estate Walkthrough & Property Films",
       description:
-        "Professional corporate videos that effectively communicate your brand message and company values.",
+        "Create immersive property walkthrough films that showcase spaces, design, and lifestyle with cinematic precision.",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop&q=80",
       delay: "0.2s",
     },
@@ -56,7 +56,7 @@ const ServicesSection = () => {
       icon: FaTv,
       title: "Brand Story Video Film",
       description:
-        "High-quality commercials and digital advertisements for television and online platforms.",
+        "Bring your brand's journey to life through powerful story-driven films that connect emotionally with your audience.",
       image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&h=250&fit=crop&q=80",
       delay: "0.3s",
     },
@@ -64,7 +64,7 @@ const ServicesSection = () => {
       icon: FaCamera,
       title: "Hospital & Healthcare Institutional Videos",
       description:
-        "Stunning product visuals that showcase your products in the best light to drive sales.",
+        "Develop trust-building healthcare films that highlight expertise, infrastructure, and patient-centric care.",
       image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=250&fit=crop&q=80",
       delay: "0.4s",
     },
@@ -72,7 +72,7 @@ const ServicesSection = () => {
       icon: FaShare,
       title: "Educational Institution Film",
       description:
-        "Eye-catching promotional videos optimized for social media platforms to maximize engagement.",
+        "Produce engaging institutional films that showcase academic excellence, campus life, and educational values.",
       image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=250&fit=crop&q=80",
       delay: "0.5s",
     },
@@ -80,7 +80,7 @@ const ServicesSection = () => {
       icon: FaMusic,
       title: "Promotional & Marketing Videos",
       description:
-        "Complete music video and film production services from concept to final delivery.",
+        "Design high-impact promotional videos that boost visibility, engagement, and brand recall across platforms.",
       image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=250&fit=crop&q=80",
       delay: "0.6s",
     },
@@ -88,7 +88,7 @@ const ServicesSection = () => {
       icon: FaHome,
       title: "Social Media Video Content",
       description:
-        "Compelling real estate videos that showcase properties and drive potential buyer interest.",
+        "Create scroll-stopping social media videos optimized for reach, engagement, and platform performance.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop&q=80",
       delay: "0.7s",
     },
@@ -96,7 +96,7 @@ const ServicesSection = () => {
       icon: FaHome,
       title: "Podcast Shoot",
       description:
-        "Compelling real estate videos that showcase properties and drive potential buyer interest.",
+        "Deliver high-quality podcast video and audio production with professional lighting, sound, and visuals.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop&q=80",
       delay: "0.7s",
     },
@@ -104,7 +104,7 @@ const ServicesSection = () => {
       icon: FaHome,
       title: "Exhibition Shoot",
       description:
-        "Compelling real estate videos that showcase properties and drive potential buyer interest.",
+        "Capture exhibitions with dynamic visuals that highlight scale, interaction, and brand presence.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop&q=80",
       delay: "0.7s",
     },
@@ -112,7 +112,7 @@ const ServicesSection = () => {
       icon: FaHome,
       title: "Event Film",
       description:
-        "Compelling real estate videos that showcase properties and drive potential buyer interest.",
+        "Produce cinematic event films that capture key moments, energy, and lasting memories.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop&q=80",
       delay: "0.7s",
     },
@@ -120,7 +120,7 @@ const ServicesSection = () => {
       icon: FaHome,
       title: "Product Photography & Video",
       description:
-        "Compelling real estate videos that showcase properties and drive potential buyer interest.",
+        "Create stunning product visuals and videos that enhance appeal and drive purchasing decisions.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop&q=80",
       delay: "0.7s",
     },
@@ -128,7 +128,7 @@ const ServicesSection = () => {
       icon: FaHome,
       title: "TV & Digital Ad Film",
       description:
-        "Compelling real estate videos that showcase properties and drive potential buyer interest.",
+        "Produce impactful TV and digital ad films designed to capture attention and deliver strong brand messaging.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop&q=80",
       delay: "0.7s",
     },
@@ -153,7 +153,7 @@ const ServicesSection = () => {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {services.map((service, index) => (
+          {services.slice(0, 4).map((service, index) => (
             <div
               key={index}
               className="card p-6 group animate-fade-in"
@@ -183,12 +183,28 @@ const ServicesSection = () => {
               <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">
                 {service.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p 
+                className="text-gray-600 leading-relaxed text-justify break-words" 
+                style={{ hyphens: 'auto', WebkitHyphens: 'auto', msHyphens: 'auto' }}
+              >
                 {service.description}
               </p>
             </div>
           ))}
         </div>
+
+        {/* Show All Services Button */}
+        {services.length > 4 && (
+          <div className="text-center mt-12">
+            <Link
+              to="/services"
+              className="inline-flex items-center space-x-2 btn-primary text-lg group"
+            >
+              <span>Show All Services</span>
+              <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
+          </div>
+        )}
 
         {/* Watch Demo Section */}
         <div className="mt-16 text-center animate-fade-in">
