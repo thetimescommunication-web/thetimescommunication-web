@@ -15,14 +15,14 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
-    "Real Estate Videos",
-    "Social Media Promo Videos",
-    "Product Photography & Videos",
-    "TV & Digital Ad Films",
-    "Animated Explainer Videos",
-    "E-Learning Videos",
-    "Music & Film Production",
-    "Corporate Videos",
+    "Documentary Film",
+    "Government Documentaries",
+    "Brand Story Video Film",
+    "Real Estate Walkthrough Films",
+    "Hospital & Healthcare Videos",
+    "Educational Institution Film",
+    "Promotional & Marketing Videos",
+    "Social Media Video Content",
   ];
 
   const quickLinks = [

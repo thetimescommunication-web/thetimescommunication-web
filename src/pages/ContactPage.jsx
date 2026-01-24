@@ -28,22 +28,27 @@ const ContactPage = () => {
   const [submitStatus, setSubmitStatus] = useState("");
 
   const services = [
-    "AI Animated Videos",
-    "E-Learning Videos",
-    "Corporate Videos",
-    "TV & Digital Ad Films",
-    "Product Photography & Videos",
-    "Social Media Promo Videos",
-    "Music & Film Production",
-    "Real Estate Videos",
+    "Documentary Film",
+    "Government Documentaries",
+    "Brand Story Video Film",
+    "Real Estate Walkthrough & Property Films",
+    "Hospital & Healthcare Institutional Videos",
+    "Educational Institution Film",
+    "Promotional & Marketing Videos",
+    "Social Media Video Content",
+    "Podcast Shoot",
+    "Exhibition Shoot",
+    "Event Film",
+    "Product Photography & Video",
+    "TV & Digital Ad Film",
   ];
 
   const budgetRanges = [
-    "Under $5,000",
-    "$5,000 - $10,000",
-    "$10,000 - $25,000",
-    "$25,000 - $50,000",
-    "Above $50,000",
+    "Under 2,00,000",
+    "2,00,000 - 5,00,000",
+    "5,00,000 - 10,00,000",
+    "10,00,000 - 25,00,000",
+    "Above 25,00,000",
     "Let's discuss",
   ];
 
@@ -214,7 +219,7 @@ const ContactPage = () => {
                           onChange={handleInputChange}
                           required
                           className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                          placeholder="John Doe"
+                          placeholder="Rajesh Patel"
                         />
                       </div>
                     </div>
@@ -236,7 +241,7 @@ const ContactPage = () => {
                           onChange={handleInputChange}
                           required
                           className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                          placeholder="john@example.com"
+                          placeholder="rajesh.patel@example.com"
                         />
                       </div>
                     </div>
@@ -259,7 +264,7 @@ const ContactPage = () => {
                           value={formData.phone}
                           onChange={handleInputChange}
                           className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                          placeholder="+1 (555) 123-4567"
+                          placeholder="+91 98765 43210"
                         />
                       </div>
                     </div>
