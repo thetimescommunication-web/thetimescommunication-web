@@ -17,131 +17,185 @@ const ServicesPage = () => {
   const services = [
     {
       icon: FaVideo,
-      title: "AI Animated Videos",
+      title: "Documentary Film",
       description:
-        "Create engaging animated explainer videos using cutting-edge AI technology to simplify complex concepts and boost audience engagement.",
+        "Craft compelling documentary films that tell authentic stories with depth, emotion, and cinematic storytelling.",
       features: [
-        "Custom character design",
-        "Professional voiceover",
-        "Script writing included",
-        "Multiple revisions",
-        "HD quality output",
+        "Concept development & research",
+        "Scriptwriting & narrative structuring",
+        "Professional cinematography",
+        "Interview & voiceover integration",
+        "HD / 4K final delivery",
       ],
-      startingPrice: "$2,500",
-      duration: "2-3 weeks",
-      image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&h=400&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop&q=80",
     },
     {
       icon: FaGraduationCap,
-      title: "E-Learning Videos",
+      title: "Government Documentaries",
       description:
-        "Educational video content designed to enhance learning experiences with professional production quality and interactive elements.",
+        "Produce informative and impactful government documentaries that communicate public initiatives with clarity and credibility.",
       features: [
-        "Interactive elements",
-        "Custom curriculum design",
-        "Multi-format delivery",
-        "Assessment integration",
-        "Mobile-friendly",
+        "Policy-focused storytelling",
+        "Scriptwriting & content research",
+        "Professional voiceover support",
+        "On-location shooting",
+        "Broadcast-quality output",
       ],
-      startingPrice: "$3,000",
-      duration: "3-4 weeks",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop&q=80",
-    },
-    {
-      icon: FaBuilding,
-      title: "Corporate Videos",
-      description:
-        "Professional corporate videos that effectively communicate your brand message, company values, and business objectives.",
-      features: [
-        "Brand storytelling",
-        "Professional interviews",
-        "Office cinematography",
-        "Music and sound design",
-        "Multiple format delivery",
-      ],
-      startingPrice: "$4,000",
-      duration: "3-5 weeks",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=400&fit=crop&q=80",
     },
     {
       icon: FaTv,
-      title: "TV & Digital Films",
+      title: "Brand Story Video Film",
       description:
-        "High-quality commercials and digital advertisements for television and online platforms that drive results.",
+        "Bring your brand's journey to life through powerful story-driven films that connect emotionally with your audience.",
       features: [
-        "Concept development",
-        "Professional casting",
-        "Location scouting",
-        "Post-production",
-        "Media placement guidance",
+        "Brand strategy & story development",
+        "Scriptwriting & creative direction",
+        "Cinematic filming & lighting",
+        "Professional voiceover & music",
+        "Multiple revisions included",
       ],
-      startingPrice: "$8,000",
-      duration: "4-6 weeks",
-      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=400&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop&q=80",
+    },
+    {
+      icon: FaBuilding,
+      title: "Real Estate Walkthrough & Property Films",
+      description:
+        "Create immersive property walkthrough films that showcase spaces, design, and lifestyle with cinematic precision.",
+      features: [
+        "Property walkthrough filming",
+        "Aerial drone shots (if required)",
+        "Professional editing & color grading",
+        "Background music & titles",
+        "HD / 4K quality output",
+      ],
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80",
     },
     {
       icon: FaCamera,
-      title: "Product Photography & Videos",
+      title: "Hospital & Healthcare Institutional Videos",
       description:
-        "Stunning product visuals that showcase your products in the best light to drive sales and enhance brand image.",
+        "Develop trust-building healthcare films that highlight expertise, infrastructure, and patient-centric care.",
       features: [
-        "Studio photography",
-        "Lifestyle shots",
-        "360-degree videos",
-        "E-commerce optimization",
-        "Social media formats",
+        "Institutional story planning",
+        "Doctor & patient interview filming",
+        "Scriptwriting & voiceover support",
+        "Clean, professional visual treatment",
+        "Multiple revision rounds",
       ],
-      startingPrice: "$1,500",
-      duration: "1-2 weeks",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&q=80",
     },
     {
       icon: FaShare,
-      title: "Social Media Promo Videos",
+      title: "Educational Institution Film",
       description:
-        "Eye-catching promotional videos optimized for social media platforms to maximize engagement and reach.",
+        "Produce engaging institutional films that showcase academic excellence, campus life, and educational values.",
       features: [
-        "Platform optimization",
-        "Trending formats",
-        "Quick turnaround",
-        "Multiple sizes",
-        "Engagement analytics",
+        "Campus & classroom coverage",
+        "Scriptwriting & concept planning",
+        "Student & faculty interviews",
+        "Professional editing & graphics",
+        "High-definition final delivery",
       ],
-      startingPrice: "$800",
-      duration: "1 week",
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=400&fit=crop&q=80",
     },
     {
       icon: FaMusic,
-      title: "Music & Film Production",
+      title: "Promotional & Marketing Videos",
       description:
-        "Complete music video and film production services from concept to final delivery with cinematic quality.",
+        "Design high-impact promotional videos that boost visibility, engagement, and brand recall across platforms.",
       features: [
-        "Creative direction",
-        "Professional equipment",
-        "Location management",
-        "Color grading",
-        "Distribution support",
+        "Creative concept & scripting",
+        "Brand-aligned visuals",
+        "Motion graphics & music",
+        "Platform-ready formats",
+        "Multiple revisions included",
       ],
-      startingPrice: "$10,000",
-      duration: "6-8 weeks",
-      image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop&q=80",
     },
     {
       icon: FaHome,
-      title: "Real Estate Videos",
+      title: "Social Media Video Content",
       description:
-        "Compelling real estate videos that showcase properties and drive potential buyer interest with drone footage.",
+        "Create scroll-stopping social media videos optimized for reach, engagement, and platform performance.",
       features: [
-        "Drone cinematography",
-        "Virtual tours",
-        "Property highlights",
-        "Neighborhood showcases",
-        "Quick delivery",
+        "Short-form video creation",
+        "Trend & platform optimization",
+        "Motion graphics & captions",
+        "Fast turnaround time",
+        "HD vertical & horizontal formats",
       ],
-      startingPrice: "$2,000",
-      duration: "1-2 weeks",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop&q=80",
+    },
+    {
+      icon: FaHome,
+      title: "Podcast Shoot",
+      description:
+        "Deliver high-quality podcast video and audio production with professional lighting, sound, and visuals.",
+      features: [
+        "Multi-camera podcast setup",
+        "Professional audio recording",
+        "Studio lighting & framing",
+        "Full-length & short clips delivery",
+        "Noise-free, HD output",
+      ],
+      image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600&h=400&fit=crop&q=80",
+    },
+    {
+      icon: FaHome,
+      title: "Exhibition Shoot",
+      description:
+        "Capture exhibitions with dynamic visuals that highlight scale, interaction, and brand presence.",
+      features: [
+        "Event & stall coverage",
+        "Detail & crowd interaction shots",
+        "Highlight video creation",
+        "On-site filming & editing",
+        "High-quality final render",
+      ],
+      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop&q=80",
+    },
+    {
+      icon: FaHome,
+      title: "Event Film",
+      description:
+        "Produce cinematic event films that capture key moments, energy, and lasting memories.",
+      features: [
+        "Full event coverage",
+        "Key moment & highlight edits",
+        "Professional audio syncing",
+        "Cinematic color grading",
+        "HD / 4K delivery",
+      ],
+      image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&h=400&fit=crop&q=80",
+    },
+    {
+      icon: FaHome,
+      title: "Product Photography & Video",
+      description:
+        "Create stunning product visuals and videos that enhance appeal and drive purchasing decisions.",
+      features: [
+        "Product-focused lighting setup",
+        "Creative angles & compositions",
+        "Studio-quality photography",
+        "Promotional product videos",
+        "Retouched HD images & videos",
+      ],
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop&q=80",
+    },
+    {
+      icon: FaHome,
+      title: "TV & Digital Ad Film",
+      description:
+        "Produce impactful TV and digital ad films designed to capture attention and deliver strong brand messaging.",
+      features: [
+        "Ad concept & script development",
+        "Professional filming & direction",
+        "Voiceover & sound design",
+        "Broadcast & digital compliance",
+        "Multiple revisions included",
+      ],
+      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=400&fit=crop&q=80",
     },
   ];
 
@@ -186,7 +240,10 @@ const ServicesPage = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-slide-up">
             Our <span className="text-yellow-300">Services</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in">
+          <p 
+            className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in text-justify break-words" 
+            style={{ hyphens: 'auto', WebkitHyphens: 'auto', msHyphens: 'auto' }}
+          >
             Comprehensive video production services to help your business grow
             and engage with your audience.
           </p>
@@ -216,7 +273,10 @@ const ServicesPage = () => {
                     </h2>
                   </div>
 
-                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  <p 
+                    className="text-lg text-gray-600 mb-6 leading-relaxed text-justify break-words" 
+                    style={{ hyphens: 'auto', WebkitHyphens: 'auto', msHyphens: 'auto' }}
+                  >
                     {service.description}
                   </p>
 
@@ -264,7 +324,10 @@ const ServicesPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Our Production Process
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p 
+              className="text-lg text-gray-600 max-w-2xl mx-auto text-justify break-words" 
+              style={{ hyphens: 'auto', WebkitHyphens: 'auto', msHyphens: 'auto' }}
+            >
               A streamlined approach that ensures quality results and client
               satisfaction.
             </p>
@@ -283,7 +346,10 @@ const ServicesPage = () => {
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p 
+                  className="text-gray-600 text-sm leading-relaxed text-justify break-words" 
+                  style={{ hyphens: 'auto', WebkitHyphens: 'auto', msHyphens: 'auto' }}
+                >
                   {step.description}
                 </p>
               </div>
@@ -298,7 +364,10 @@ const ServicesPage = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-slide-up">
             Ready to Get Started?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto animate-fade-in">
+          <p 
+            className="text-xl mb-8 max-w-2xl mx-auto animate-fade-in text-justify break-words" 
+            style={{ hyphens: 'auto', WebkitHyphens: 'auto', msHyphens: 'auto' }}
+          >
             Let's discuss your project and create a video that drives results
             for your business.
           </p>

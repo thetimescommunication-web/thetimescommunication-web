@@ -18,7 +18,7 @@ const TestimonialsSection = () => {
       content:
         "A corporate video is essential for every industry, as it allows us to present everything about our company through a single, powerful medium. This corporate video has been extremely beneficial for us.",
       rating: 5,
-      image: "/api/placeholder/80/80",
+      image: "/images/testinomials/DNCastech.jpeg",
     },
     {
       id: 2,
@@ -28,7 +28,7 @@ const TestimonialsSection = () => {
       content:
         "Our company's corporate video was created by The Times Communication. In just six months, we generated business worth three crore rupees through our corporate video.",
       rating: 5,
-      image: "/api/placeholder/80/80",
+      image: "/images/testinomials/GREENWELL.png",
     },
     {
       id: 3,
@@ -38,7 +38,7 @@ const TestimonialsSection = () => {
       content:
         "What cannot be effectively conveyed through text can be communicated powerfully through a corporate video, creating a strong and positive identity for a company.”",
       rating: 5,
-      image: "/api/placeholder/80/80",
+      image: "/images/testinomials/DNCastech.jpeg",
     }
   ];
 
@@ -194,7 +194,7 @@ const TestimonialsSection = () => {
                 <img
                   src={testimonials[currentTestimonial].image}
                   alt={testimonials[currentTestimonial].name}
-                  className="w-16 h-16 rounded-full object-cover"
+                  className="w-20 h-30 rounded-lg object-cover"
                   loading="lazy"
                 />
                 <div className="text-center sm:text-left">
