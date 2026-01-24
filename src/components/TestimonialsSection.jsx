@@ -12,54 +12,34 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Anshuman",
-      position: "AVP – Brand, Content & Creative Strategy",
-      company: "STAR Health",
+      name: "Mr. Dharmesh Patel",
+      position: "Owner",
+      company: "DN Castech",
       content:
-        "These guys are awesome! We're working with them for 2 years now and they impress us everytime. They are willing to go beyond the basics to deliver exactly what's desired.",
+        "A corporate video is essential for every industry, as it allows us to present everything about our company through a single, powerful medium. This corporate video has been extremely beneficial for us.",
       rating: 5,
       image: "/api/placeholder/80/80",
     },
     {
       id: 2,
-      name: "Ritika Jha",
-      position: "Co-Founder & CMO",
-      company: "Codeblends",
+      name: "⁠Mr. Vipul Patel",
+      position: "Owner",
+      company: "Greenwell biotech",
       content:
-        "They will surprise you with an unmatched excellence each time they come up with a new video. You don't have to struggle to make them understand what are you looking for as an output in the final video.",
+        "Our company's corporate video was created by The Times Communication. In just six months, we generated business worth three crore rupees through our corporate video.",
       rating: 5,
       image: "/api/placeholder/80/80",
     },
     {
       id: 3,
-      name: "Sukanya Pathania",
-      position: "Marketing Manager",
-      company: "Tech Solutions Inc.",
+      name: "Mr. D. N. Patel",
+      position: "Owner",
+      company: "DN Group",
       content:
-        "The quality of the final video was really good. The team at The Times Communication was also very responsive throughout the process, providing regular updates and taking our feedback to ensure that the final video was exactly what we wanted.",
+        "What cannot be effectively conveyed through text can be communicated powerfully through a corporate video, creating a strong and positive identity for a company.”",
       rating: 5,
       image: "/api/placeholder/80/80",
-    },
-    {
-      id: 4,
-      name: "Manan Dhingra",
-      position: "Business Owner",
-      company: "Digital Marketing Agency",
-      content:
-        "I recently worked with The Times Communication on a video project and I couldn't be happier with the results. From start to finish, the team was professional.",
-      rating: 5,
-      image: "/api/placeholder/80/80",
-    },
-    {
-      id: 5,
-      name: "Kesar Kumar",
-      position: "Data Specialist",
-      company: "Xerox",
-      content:
-        "We had a great experience working with The Times Communication in Gujarat. Their team was professional, and the final product was delivered on time. The video quality was outstanding! A fantastic video production house in the region",
-      rating: 5,
-      image: "/api/placeholder/80/80",
-    },
+    }
   ];
 
   // Define which logos need dark backgrounds (white/light logos)
