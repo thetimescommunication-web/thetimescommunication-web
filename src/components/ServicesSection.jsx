@@ -30,7 +30,7 @@ const ServicesSection = () => {
   const services = [
     {
       icon: FaVideo,
-      title: "AI Animated Videos",
+      title: "Documentary Film",
       description:
         "Create engaging animated explainer videos using cutting-edge AI technology to simplify complex concepts.",
       image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=250&fit=crop&q=80",
@@ -38,7 +38,7 @@ const ServicesSection = () => {
     },
     {
       icon: FaGraduationCap,
-      title: "E-Learning Videos",
+      title: "Government Documentaries",
       description:
         "Educational video content designed to enhance learning experiences with professional production quality.",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop&q=80",
@@ -46,7 +46,7 @@ const ServicesSection = () => {
     },
     {
       icon: FaBuilding,
-      title: "Corporate Videos",
+      title: "Real Estate Walkthrough & Property Films",
       description:
         "Professional corporate videos that effectively communicate your brand message and company values.",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop&q=80",
@@ -54,7 +54,7 @@ const ServicesSection = () => {
     },
     {
       icon: FaTv,
-      title: "TV & Digital Films",
+      title: "Brand Story Video Film",
       description:
         "High-quality commercials and digital advertisements for television and online platforms.",
       image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&h=250&fit=crop&q=80",
@@ -62,7 +62,7 @@ const ServicesSection = () => {
     },
     {
       icon: FaCamera,
-      title: "Product Photography & Videos",
+      title: "Hospital & Healthcare Institutional Videos",
       description:
         "Stunning product visuals that showcase your products in the best light to drive sales.",
       image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=250&fit=crop&q=80",
@@ -70,7 +70,7 @@ const ServicesSection = () => {
     },
     {
       icon: FaShare,
-      title: "Social Media Promo Videos",
+      title: "Educational Institution Film",
       description:
         "Eye-catching promotional videos optimized for social media platforms to maximize engagement.",
       image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=250&fit=crop&q=80",
@@ -78,7 +78,7 @@ const ServicesSection = () => {
     },
     {
       icon: FaMusic,
-      title: "Music & Film Production",
+      title: "Promotional & Marketing Videos",
       description:
         "Complete music video and film production services from concept to final delivery.",
       image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=250&fit=crop&q=80",
@@ -86,7 +86,47 @@ const ServicesSection = () => {
     },
     {
       icon: FaHome,
-      title: "Real Estate Videos",
+      title: "Social Media Video Content",
+      description:
+        "Compelling real estate videos that showcase properties and drive potential buyer interest.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop&q=80",
+      delay: "0.7s",
+    },
+    {
+      icon: FaHome,
+      title: "Podcast Shoot",
+      description:
+        "Compelling real estate videos that showcase properties and drive potential buyer interest.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop&q=80",
+      delay: "0.7s",
+    },
+    {
+      icon: FaHome,
+      title: "Exhibition Shoot",
+      description:
+        "Compelling real estate videos that showcase properties and drive potential buyer interest.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop&q=80",
+      delay: "0.7s",
+    },
+    {
+      icon: FaHome,
+      title: "Event Film",
+      description:
+        "Compelling real estate videos that showcase properties and drive potential buyer interest.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop&q=80",
+      delay: "0.7s",
+    },
+    {
+      icon: FaHome,
+      title: "Product Photography & Video",
+      description:
+        "Compelling real estate videos that showcase properties and drive potential buyer interest.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop&q=80",
+      delay: "0.7s",
+    },
+    {
+      icon: FaHome,
+      title: "TV & Digital Ad Film",
       description:
         "Compelling real estate videos that showcase properties and drive potential buyer interest.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop&q=80",
