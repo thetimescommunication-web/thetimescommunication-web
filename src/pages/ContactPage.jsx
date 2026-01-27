@@ -219,7 +219,7 @@ const ContactPage = () => {
                           onChange={handleInputChange}
                           required
                           className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                          placeholder="Rajesh Patel"
+                          placeholder="Your Name"
                         />
                       </div>
                     </div>
@@ -241,7 +241,7 @@ const ContactPage = () => {
                           onChange={handleInputChange}
                           required
                           className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                          placeholder="rajesh.patel@example.com"
+                          placeholder="Your Email"
                         />
                       </div>
                     </div>
@@ -264,7 +264,7 @@ const ContactPage = () => {
                           value={formData.phone}
                           onChange={handleInputChange}
                           className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-                          placeholder="+91 98765 43210"
+                          placeholder="Your Contact Number"
                         />
                       </div>
                     </div>

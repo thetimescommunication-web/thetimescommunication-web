@@ -27,7 +27,7 @@ const ServicesPage = () => {
         "Interview & voiceover integration",
         "HD / 4K final delivery",
       ],
-      image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop&q=80",
+      image: "/images/services/documentry.PNG",
     },
     {
       icon: FaGraduationCap,
@@ -41,7 +41,7 @@ const ServicesPage = () => {
         "On-location shooting",
         "Broadcast-quality output",
       ],
-      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=400&fit=crop&q=80",
+      image: "/images/services/goverment_documentries.png",
     },
     {
       icon: FaTv,
@@ -55,7 +55,7 @@ const ServicesPage = () => {
         "Professional voiceover & music",
         "Multiple revisions included",
       ],
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop&q=80",
+      image: "/images/services/brand_story.PNG",
     },
     {
       icon: FaBuilding,
@@ -69,7 +69,7 @@ const ServicesPage = () => {
         "Background music & titles",
         "HD / 4K quality output",
       ],
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80",
+      image: "/images/services/real_estate.PNG",
     },
     {
       icon: FaCamera,
@@ -83,7 +83,7 @@ const ServicesPage = () => {
         "Clean, professional visual treatment",
         "Multiple revision rounds",
       ],
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&q=80",
+      image: "/images/services/hosptal_helthcare.png",
     },
     {
       icon: FaShare,
@@ -97,7 +97,7 @@ const ServicesPage = () => {
         "Professional editing & graphics",
         "High-definition final delivery",
       ],
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=400&fit=crop&q=80",
+      image: "/images/services/educational.PNG",
     },
     {
       icon: FaMusic,
@@ -111,7 +111,7 @@ const ServicesPage = () => {
         "Platform-ready formats",
         "Multiple revisions included",
       ],
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop&q=80",
+      image: "/images/services/promotional_marketing.PNG",
     },
     {
       icon: FaHome,
@@ -125,7 +125,7 @@ const ServicesPage = () => {
         "Fast turnaround time",
         "HD vertical & horizontal formats",
       ],
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop&q=80",
+      image: "/images/services/social_media.png",
     },
     {
       icon: FaHome,
@@ -139,7 +139,7 @@ const ServicesPage = () => {
         "Full-length & short clips delivery",
         "Noise-free, HD output",
       ],
-      image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600&h=400&fit=crop&q=80",
+      image: "/images/services/podcast_shoot.PNG",
     },
     {
       icon: FaHome,
@@ -153,7 +153,7 @@ const ServicesPage = () => {
         "On-site filming & editing",
         "High-quality final render",
       ],
-      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop&q=80",
+      image: "/images/services/exhibition.PNG",
     },
     {
       icon: FaHome,
@@ -167,7 +167,7 @@ const ServicesPage = () => {
         "Cinematic color grading",
         "HD / 4K delivery",
       ],
-      image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&h=400&fit=crop&q=80",
+      image: "/images/services/event_film.PNG",
     },
     {
       icon: FaHome,
@@ -181,7 +181,7 @@ const ServicesPage = () => {
         "Promotional product videos",
         "Retouched HD images & videos",
       ],
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop&q=80",
+      image: "/images/services/product_photography.png",
     },
     {
       icon: FaHome,
@@ -195,7 +195,7 @@ const ServicesPage = () => {
         "Broadcast & digital compliance",
         "Multiple revisions included",
       ],
-      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=400&fit=crop&q=80",
+      image: "/images/services/tv_digital_add.png",
     },
   ];
 
