@@ -28,6 +28,7 @@ const ContactPage = () => {
   const [submitStatus, setSubmitStatus] = useState("");
 
   const services = [
+    "Corporate Film",
     "Documentary Film",
     "Government Documentaries",
     "Brand Story Video Film",
@@ -36,11 +37,9 @@ const ContactPage = () => {
     "Educational Institution Film",
     "Promotional & Marketing Videos",
     "Social Media Video Content",
-    "Podcast Shoot",
-    "Exhibition Shoot",
-    "Event Film",
+    "Digital Media Ad Film",
     "Product Photography & Video",
-    "TV & Digital Ad Film",
+    "TV Ad Film",
   ];
 
   const budgetRanges = [
@@ -110,7 +109,7 @@ const ContactPage = () => {
 
       // Prepare email template parameters (simple template - just pass the formatted content)
       const templateParams = {
-        to_email: 'thetimescommunication@gmail.com',
+        to_email: 'films@thetimescommunication.com',
         from_name: formData.name,
         from_email: formData.email,
         subject: `New Contact Form Submission from ${formData.name}`,
@@ -157,7 +156,7 @@ const ContactPage = () => {
     {
       icon: FaEnvelope,
       title: "Email",
-      details: ["thetimescommunication@gmail.com"],
+      details: ["films@thetimescommunication.com"],
     },
     {
       icon: FaClock,

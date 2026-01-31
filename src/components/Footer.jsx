@@ -15,11 +15,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
+    "Corporate Film",
     "Documentary Film",
     "Government Documentaries",
     "Brand Story Video Film",
-    "Real Estate Walkthrough Films",
-    "Hospital & Healthcare Videos",
+    "Real Estate Walkthrough & Property Films",
+    "Hospital & Healthcare Institutional Videos",
     "Educational Institution Film",
     "Promotional & Marketing Videos",
     "Social Media Video Content",
@@ -142,10 +143,10 @@ const Footer = () => {
                 <div className="flex items-center space-x-3">
                   <FaEnvelope className="text-primary-400 flex-shrink-0" />
                   <a
-                    href="mailto:thetimescommunication@gmail.com"
+                    href="mailto:films@thetimescommunication.com"
                     className="text-gray-300 hover:text-primary-400 transition-colors duration-300"
                   >
-                    thetimescommunication@gmail.com
+                    films@thetimescommunication.com
                   </a>
                 </div>
               </div>
