@@ -9,6 +9,16 @@ import {
   FaTimes,
 } from "react-icons/fa";
 
+const PORTFOLIO_SEQUENCE = [
+  "corporate",
+  "government",
+  "client_testimonial",
+  "bts",
+  "national_games",
+  "vibrant",
+  "others",
+];
+
 const PortfolioPage = () => {
   const [playlists, setPlaylists] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -32,6 +42,33 @@ const PortfolioPage = () => {
       fullText: text,
       isLong: true
     };
+  };
+
+  const getPortfolioBucket = (item) => {
+    const haystack = `${item?.title || ""} ${item?.category || ""}`.toLowerCase();
+
+    if (haystack.includes("corporate")) return "corporate";
+    if (
+      haystack.includes("government") ||
+      haystack.includes("goverment") ||
+      haystack.includes("govt")
+    ) {
+      return "government";
+    }
+    if (haystack.includes("testimonial") || haystack.includes("testinomial")) {
+      return "client_testimonial";
+    }
+    if (haystack.includes("bts") || haystack.includes("behind the scenes")) {
+      return "bts";
+    }
+    if (
+      haystack.includes("national games") ||
+      haystack.includes("nationalgames")
+    ) {
+      return "national_games";
+    }
+    if (haystack.includes("vibrant")) return "vibrant";
+    return "others";
   };
 
   // YouTube API Configuration
@@ -262,6 +299,17 @@ const PortfolioPage = () => {
 
   // Use YouTube playlists if available, otherwise fall back to static items
   const displayItems = playlists.length > 0 ? playlists : portfolioItems;
+  const orderedDisplayItems = displayItems
+    .map((item, originalIndex) => ({ item, originalIndex }))
+    .sort((a, b) => {
+      const aBucket = getPortfolioBucket(a.item);
+      const bBucket = getPortfolioBucket(b.item);
+      const aRank = PORTFOLIO_SEQUENCE.indexOf(aBucket);
+      const bRank = PORTFOLIO_SEQUENCE.indexOf(bBucket);
+      if (aRank !== bRank) return aRank - bRank;
+      return a.originalIndex - b.originalIndex;
+    })
+    .map(({ item }) => item);
 
   return (
     <div>
@@ -327,7 +375,7 @@ const PortfolioPage = () => {
                   <p className="text-gray-600 text-lg">No playlists found.</p>
                 </div>
               ) : (
-                displayItems.map((item, index) => (
+                orderedDisplayItems.map((item, index) => (
               <div
                 key={item.id}
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in"

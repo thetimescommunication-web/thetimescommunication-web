@@ -29,12 +29,20 @@ const ServicesSection = () => {
   };
   const services = [
     {
+      icon: FaBuilding,
+      title: "Corporate Film",
+      description:
+        "Create professional corporate films that communicate your company profile, culture, strengths, and vision with clarity and impact.",
+      image: "/images/services/corporate.jpeg",
+      delay: "0s",
+    },
+    {
       icon: FaVideo,
       title: "Documentary Film",
       description:
         "Craft compelling documentary films that tell authentic stories with depth, emotion, and cinematic storytelling.",
       image: "/images/services/documentry.PNG",
-      delay: "0s",
+      delay: "0.1s",
     },
     {
       icon: FaGraduationCap,
@@ -42,14 +50,6 @@ const ServicesSection = () => {
       description:
         "Produce informative and impactful government documentaries that communicate public initiatives with clarity and credibility.",
       image: "/images/services/goverment_documentries.png",
-      delay: "0.1s",
-    },
-    {
-      icon: FaBuilding,
-      title: "Real Estate Walkthrough & Property Films",
-      description:
-        "Create immersive property walkthrough films that showcase spaces, design, and lifestyle with cinematic precision.",
-      image: "/images/services/real_estate.PNG",
       delay: "0.2s",
     },
     {
@@ -61,12 +61,20 @@ const ServicesSection = () => {
       delay: "0.3s",
     },
     {
+      icon: FaHome,
+      title: "Real Estate Walkthrough & Property Films",
+      description:
+        "Create immersive property walkthrough films that showcase spaces, design, and lifestyle with cinematic precision.",
+      image: "/images/services/real_estate.PNG",
+      delay: "0.4s",
+    },
+    {
       icon: FaCamera,
       title: "Hospital & Healthcare Institutional Videos",
       description:
         "Develop trust-building healthcare films that highlight expertise, infrastructure, and patient-centric care.",
       image: "/images/services/hosptal_helthcare.png",
-      delay: "0.4s",
+      delay: "0.5s",
     },
     {
       icon: FaShare,
@@ -74,7 +82,7 @@ const ServicesSection = () => {
       description:
         "Produce engaging institutional films that showcase academic excellence, campus life, and educational values.",
       image: "/images/services/educational.PNG",
-      delay: "0.5s",
+      delay: "0.6s",
     },
     {
       icon: FaMusic,
@@ -82,7 +90,7 @@ const ServicesSection = () => {
       description:
         "Design high-impact promotional videos that boost visibility, engagement, and brand recall across platforms.",
       image: "/images/services/promotional_marketing.PNG",
-      delay: "0.6s",
+      delay: "0.7s",
     },
     {
       icon: FaHome,
@@ -90,31 +98,15 @@ const ServicesSection = () => {
       description:
         "Create scroll-stopping social media videos optimized for reach, engagement, and platform performance.",
       image: "/images/services/social_media.png",
-      delay: "0.7s",
+      delay: "0.8s",
     },
     {
-      icon: FaHome,
-      title: "Podcast Shoot",
+      icon: FaVideo,
+      title: "Digital Media Ad Film",
       description:
-        "Deliver high-quality podcast video and audio production with professional lighting, sound, and visuals.",
-      image: "/images/services/podcast_shoot.PNG",
-      delay: "0.7s",
-    },
-    {
-      icon: FaHome,
-      title: "Exhibition Shoot",
-      description:
-        "Capture exhibitions with dynamic visuals that highlight scale, interaction, and brand presence.",
-      image: "/images/services/exhibition.PNG",
-      delay: "0.7s",
-    },
-    {
-      icon: FaHome,
-      title: "Event Film",
-      description:
-        "Produce cinematic event films that capture key moments, energy, and lasting memories.",
-      image: "/images/services/event_film.PNG",
-      delay: "0.7s",
+        "Produce digital-first ad films crafted for online platforms to capture attention fast and drive strong performance.",
+      image: "/images/services/tv_digital_add.png",
+      delay: "0.9s",
     },
     {
       icon: FaHome,
@@ -122,15 +114,15 @@ const ServicesSection = () => {
       description:
         "Create stunning product visuals and videos that enhance appeal and drive purchasing decisions.",
       image: "/images/services/product_photography.png",
-      delay: "0.7s",
+      delay: "1s",
     },
     {
-      icon: FaHome,
-      title: "TV & Digital Ad Film",
+      icon: FaTv,
+      title: "TV Ad Film",
       description:
-        "Produce impactful TV and digital ad films designed to capture attention and deliver strong brand messaging.",
+        "Produce impactful TV ad films designed to capture attention and deliver strong brand messaging with broadcast-ready quality.",
       image: "/images/services/tv_digital_add.png",
-      delay: "0.7s",
+      delay: "1.1s",
     },
   ];
 
@@ -223,7 +215,7 @@ const ServicesSection = () => {
                 {!isPlaying && (
                   <div className="relative">
                 <img
-                      src="/images/video-logo.png"
+                      src="/images/video-logo.jpeg"
                       alt="The Times Communication"
                       className="w-full h-auto object-contain"
                 />
@@ -244,7 +236,7 @@ const ServicesSection = () => {
                   preload="metadata"
                   loop
                   playsInline
-                  poster="/images/video-logo.png"
+                  poster="/images/video-logo.jpeg"
                   onClick={toggleVideo}
                   onPlay={() => setIsPlaying(true)}
                   onPause={() => setIsPlaying(false)}

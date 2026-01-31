@@ -2,10 +2,20 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaPlay, FaPause } from "react-icons/fa";
 
+const HERO_ROTATING_WORDS = [
+  "VIDEOS",
+  "VISION",
+  "CREATIVITY",
+  "STORIES",
+  "FILMS",
+  "QUALITY",
+];
+
 const HeroSection = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isVideoReady, setIsVideoReady] = useState(false);
   const [isVideoLoading, setIsVideoLoading] = useState(true);
+  const [rotatingWordIndex, setRotatingWordIndex] = useState(0);
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -45,6 +55,13 @@ const HeroSection = () => {
       video.removeEventListener('waiting', handleWaiting);
       video.removeEventListener('playing', handlePlaying);
     };
+  }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setRotatingWordIndex((prev) => (prev + 1) % HERO_ROTATING_WORDS.length);
+    }, 2000);
+    return () => clearInterval(id);
   }, []);
 
   const toggleVideo = () => {
@@ -131,9 +148,23 @@ const HeroSection = () => {
               <span className="inline-block animate-slide-up" style={{ animationDelay: "0.4s" }}>COMMUNICATION</span>
           </p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-shadow-lg animate-slide-up group-hover:scale-105 transition-transform duration-500">
-              WHERE <span className="text-gradient animate-pulse">VIDEOS</span>
+              WHERE{" "}
+              <span
+                key={HERO_ROTATING_WORDS[rotatingWordIndex]}
+                className="inline-block animate-slide-up"
+              >
+                <span className="text-gradient animate-pulse">
+                  {HERO_ROTATING_WORDS[rotatingWordIndex]}
+                </span>
+              </span>
             <br />
-              MEETS <span className="text-gradient animate-pulse" style={{ animationDelay: "0.5s" }}>EXCELLENCE</span>
+              MEETS{" "}
+              <span
+                className="text-gradient animate-pulse"
+                style={{ animationDelay: "0.5s" }}
+              >
+                EXCELLENCE
+              </span>
           </h1>
           <p
               className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-shadow leading-relaxed animate-fade-in group-hover:text-white transition-colors duration-300"

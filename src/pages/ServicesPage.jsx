@@ -16,6 +16,20 @@ import {
 const ServicesPage = () => {
   const services = [
     {
+      icon: FaBuilding,
+      title: "Corporate Film",
+      description:
+        "Create professional corporate films that communicate your company profile, culture, strengths, and vision with clarity and impact.",
+      features: [
+        "Company profile & messaging",
+        "Storyboarding & scripting support",
+        "Professional cinematography",
+        "Interviews & voiceover integration",
+        "HD / 4K final delivery",
+      ],
+      image: "/images/services/corporate.jpeg",
+    },
+    {
       icon: FaVideo,
       title: "Documentary Film",
       description:
@@ -58,10 +72,10 @@ const ServicesPage = () => {
       image: "/images/services/brand_story.PNG",
     },
     {
-      icon: FaBuilding,
       title: "Real Estate Walkthrough & Property Films",
       description:
         "Create immersive property walkthrough films that showcase spaces, design, and lifestyle with cinematic precision.",
+      icon: FaHome,
       features: [
         "Property walkthrough filming",
         "Aerial drone shots (if required)",
@@ -128,46 +142,18 @@ const ServicesPage = () => {
       image: "/images/services/social_media.png",
     },
     {
-      icon: FaHome,
-      title: "Podcast Shoot",
+      icon: FaVideo,
+      title: "Digital Media Ad Film",
       description:
-        "Deliver high-quality podcast video and audio production with professional lighting, sound, and visuals.",
+        "Produce digital-first ad films crafted for online platforms to capture attention fast and drive strong performance.",
       features: [
-        "Multi-camera podcast setup",
-        "Professional audio recording",
-        "Studio lighting & framing",
-        "Full-length & short clips delivery",
-        "Noise-free, HD output",
+        "Digital-first creative & scripting",
+        "Platform-specific durations (6s / 15s / 30s)",
+        "High-impact edits & motion graphics",
+        "Subtitles / captions optimized for mobile",
+        "Multiple revision rounds",
       ],
-      image: "/images/services/podcast_shoot.PNG",
-    },
-    {
-      icon: FaHome,
-      title: "Exhibition Shoot",
-      description:
-        "Capture exhibitions with dynamic visuals that highlight scale, interaction, and brand presence.",
-      features: [
-        "Event & stall coverage",
-        "Detail & crowd interaction shots",
-        "Highlight video creation",
-        "On-site filming & editing",
-        "High-quality final render",
-      ],
-      image: "/images/services/exhibition.PNG",
-    },
-    {
-      icon: FaHome,
-      title: "Event Film",
-      description:
-        "Produce cinematic event films that capture key moments, energy, and lasting memories.",
-      features: [
-        "Full event coverage",
-        "Key moment & highlight edits",
-        "Professional audio syncing",
-        "Cinematic color grading",
-        "HD / 4K delivery",
-      ],
-      image: "/images/services/event_film.PNG",
+      image: "/images/services/tv_digital_add.png",
     },
     {
       icon: FaHome,
@@ -184,16 +170,16 @@ const ServicesPage = () => {
       image: "/images/services/product_photography.png",
     },
     {
-      icon: FaHome,
-      title: "TV & Digital Ad Film",
+      icon: FaTv,
+      title: "TV Ad Film",
       description:
-        "Produce impactful TV and digital ad films designed to capture attention and deliver strong brand messaging.",
+        "Produce impactful TV ad films designed to capture attention and deliver strong brand messaging with broadcast-ready quality.",
       features: [
-        "Ad concept & script development",
+        "TVC concept & script development",
         "Professional filming & direction",
-        "Voiceover & sound design",
-        "Broadcast & digital compliance",
-        "Multiple revisions included",
+        "Studio / on-location production",
+        "Voiceover, music & sound design",
+        "Broadcast-ready master delivery",
       ],
       image: "/images/services/tv_digital_add.png",
     },

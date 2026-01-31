@@ -2,6 +2,16 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaPlay, FaArrowRight, FaYoutube, FaSpinner, FaCalendarAlt, FaExternalLinkAlt } from "react-icons/fa";
 
+const HOME_PORTFOLIO_SEQUENCE = [
+  "corporate",
+  "government",
+  "client_testimonial",
+  "bts",
+  "national_games",
+  "vibrant",
+  "others",
+];
+
 const PortfolioSection = () => {
   const [playlists, setPlaylists] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -26,6 +36,33 @@ const PortfolioSection = () => {
     };
   };
 
+  const getHomePortfolioBucket = (item) => {
+    const haystack = `${item?.title || ""} ${item?.category || ""}`.toLowerCase();
+
+    if (haystack.includes("corporate")) return "corporate";
+    if (
+      haystack.includes("government") ||
+      haystack.includes("goverment") ||
+      haystack.includes("govt")
+    ) {
+      return "government";
+    }
+    if (haystack.includes("testimonial") || haystack.includes("testinomial")) {
+      return "client_testimonial";
+    }
+    if (haystack.includes("bts") || haystack.includes("behind the scenes")) {
+      return "bts";
+    }
+    if (
+      haystack.includes("national games") ||
+      haystack.includes("nationalgames")
+    ) {
+      return "national_games";
+    }
+    if (haystack.includes("vibrant")) return "vibrant";
+    return "others";
+  };
+
   // YouTube API Configuration
   const YOUTUBE_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
   const CHANNEL_ID = import.meta.env.VITE_YOUTUBE_CHANNEL_ID;
@@ -48,7 +85,7 @@ const PortfolioSection = () => {
         }
         
         const response = await fetch(
-          `https://www.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&channelId=${CHANNEL_ID}&maxResults=4&key=${YOUTUBE_API_KEY}`
+          `https://www.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&channelId=${CHANNEL_ID}&maxResults=50&key=${YOUTUBE_API_KEY}`
         );
 
         if (!response.ok) {
@@ -174,6 +211,18 @@ const PortfolioSection = () => {
 
   // Use YouTube playlists if available, otherwise fall back to static items
   const displayItems = playlists.length > 0 ? playlists : portfolioItems;
+  const orderedDisplayItems = displayItems
+    .map((item, originalIndex) => ({ item, originalIndex }))
+    .sort((a, b) => {
+      const aBucket = getHomePortfolioBucket(a.item);
+      const bBucket = getHomePortfolioBucket(b.item);
+      const aRank = HOME_PORTFOLIO_SEQUENCE.indexOf(aBucket);
+      const bRank = HOME_PORTFOLIO_SEQUENCE.indexOf(bBucket);
+      if (aRank !== bRank) return aRank - bRank;
+      return a.originalIndex - b.originalIndex;
+    })
+    .map(({ item }) => item)
+    .slice(0, 4);
 
   return (
     <section className="section-padding bg-white" id="portfolio">
@@ -217,7 +266,7 @@ const PortfolioSection = () => {
                 <p className="text-gray-600 text-lg">No playlists found.</p>
               </div>
             ) : (
-              displayItems.map((item, index) => (
+              orderedDisplayItems.map((item, index) => (
             <div
               key={item.id}
               className="card overflow-hidden group animate-fade-in"
