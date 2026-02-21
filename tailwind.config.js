@@ -64,6 +64,10 @@ export default {
         "bounce-in": "bounceIn 0.8s ease-out",
         "scroll-left": "scrollLeft 30s linear infinite",
         "scroll-right": "scrollRight 30s linear infinite",
+        "slide-in-left": "slideInLeft 1s ease-out",
+        "slide-in-right": "slideInRight 1s ease-out",
+        "glow-pulse": "glowPulse 3s ease-in-out infinite",
+        "text-shimmer": "textShimmer 4s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -87,6 +91,29 @@ export default {
         scrollRight: {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(0)" },
+        },
+        slideInLeft: {
+          "0%": { transform: "translateX(-50px)", opacity: "0", scale: "0.8" },
+          "100%": { transform: "translateX(0)", opacity: "1", scale: "1" },
+        },
+        slideInRight: {
+          "0%": { opacity: "0", scale: "0.8" },
+          "100%": { opacity: "1", scale: "1" },
+        },
+        glowPulse: {
+          "0%, 100%": { 
+            textShadow: "0 2px 8px rgba(0, 130, 130, 0.5), 0 0 20px rgba(0, 146, 146, 0.3)",
+            opacity: "0.9"
+          },
+          "50%": { 
+            textShadow: "0 4px 16px rgba(0, 146, 146, 0.8), 0 0 30px rgba(0, 200, 200, 0.5)",
+            opacity: "1"
+          },
+        },
+        textShimmer: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
         },
       },
     },
