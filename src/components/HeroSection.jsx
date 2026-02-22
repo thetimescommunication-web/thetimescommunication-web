@@ -59,7 +59,7 @@ const HeroSection = () => {
 
   return (
     <section 
-      className="relative flex items-center justify-center overflow-hidden bg-gray-900 w-full h-[56.25vw] sm:h-[70vh] lg:h-[calc(100vh-5rem)] mb-8 sm:mb-0">
+      className="relative flex items-center justify-center overflow-hidden bg-gray-900 w-full h-[56.25vw] sm:h-[70vh] lg:h-[calc(100vh-5rem)] mt-2 sm:mt-0 mb-8 sm:mb-0">
       {/* Video Container */}
       <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center">
         {/* Subtle Pattern Overlay */}

@@ -21,11 +21,11 @@ const TrustedBrandsSection = () => {
     );
 
     if (needsColoredBg) {
-      return "flex items-center justify-center w-32 h-20 bg-orange-500 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex-shrink-0";
+      return "flex items-center justify-center w-24 h-16 sm:w-32 sm:h-20 bg-orange-500 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex-shrink-0";
     } else if (needsDarkBg) {
-      return "flex items-center justify-center w-32 h-20 bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex-shrink-0";
+      return "flex items-center justify-center w-24 h-16 sm:w-32 sm:h-20 bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex-shrink-0";
     } else {
-      return "flex items-center justify-center w-32 h-20 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex-shrink-0";
+      return "flex items-center justify-center w-24 h-16 sm:w-32 sm:h-20 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex-shrink-0";
     }
   };
 
@@ -80,78 +80,70 @@ const TrustedBrandsSection = () => {
         </div>
 
         {/* First Row - Scrolling Left */}
-        <div className="relative overflow-hidden mb-8 animate-fade-in">
-          <div className="flex animate-scroll-left">
-            {/* First set of logos */}
-            <div className="flex items-center space-x-8 min-w-max">
-              {row1Logos.map((logo, index) => (
-                <div
-                  key={`row1-${index}`}
-                  className={getLogoContainerClass(logo.src)}
-                >
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="max-w-full max-h-full object-contain p-2"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-            {/* Duplicate set for seamless loop */}
-            <div className="flex items-center space-x-8 min-w-max">
-              {row1Logos.map((logo, index) => (
-                <div
-                  key={`row1-duplicate-${index}`}
-                  className={getLogoContainerClass(logo.src)}
-                >
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="max-w-full max-h-full object-contain p-2"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
+        <div className="relative overflow-hidden mb-8 animate-fade-in h-16 sm:h-20">
+          <div className="absolute top-0 left-0 flex items-center space-x-4 sm:space-x-8 min-w-max pr-4 sm:pr-8 animate-marquee-left">
+            {row1Logos.map((logo, index) => (
+              <div
+                key={`row1-${index}`}
+                className={getLogoContainerClass(logo.src)}
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="max-w-full max-h-full object-contain p-1 sm:p-2"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="absolute top-0 left-0 flex items-center space-x-4 sm:space-x-8 min-w-max pr-4 sm:pr-8 animate-marquee-left-2">
+            {row1Logos.map((logo, index) => (
+              <div
+                key={`row1-duplicate-${index}`}
+                className={getLogoContainerClass(logo.src)}
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="max-w-full max-h-full object-contain p-1 sm:p-2"
+                  loading="lazy"
+                />
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Second Row - Scrolling Right */}
-        <div className="relative overflow-hidden animate-fade-in">
-          <div className="flex animate-scroll-right">
-            {/* First set of logos */}
-            <div className="flex items-center space-x-8 min-w-max">
-              {row2Logos.map((logo, index) => (
-                <div
-                  key={`row2-${index}`}
-                  className={getLogoContainerClass(logo.src)}
-                >
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="max-w-full max-h-full object-contain p-2"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-            {/* Duplicate set for seamless loop */}
-            <div className="flex items-center space-x-8 min-w-max">
-              {row2Logos.map((logo, index) => (
-                <div
-                  key={`row2-duplicate-${index}`}
-                  className={getLogoContainerClass(logo.src)}
-                >
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="max-w-full max-h-full object-contain p-2"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
+        <div className="relative overflow-hidden animate-fade-in h-16 sm:h-20">
+          <div className="absolute top-0 left-0 flex items-center space-x-4 sm:space-x-8 min-w-max pr-4 sm:pr-8 animate-marquee-right">
+            {row2Logos.map((logo, index) => (
+              <div
+                key={`row2-${index}`}
+                className={getLogoContainerClass(logo.src)}
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="max-w-full max-h-full object-contain p-1 sm:p-2"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="absolute top-0 left-0 flex items-center space-x-4 sm:space-x-8 min-w-max pr-4 sm:pr-8 animate-marquee-right-2">
+            {row2Logos.map((logo, index) => (
+              <div
+                key={`row2-duplicate-${index}`}
+                className={getLogoContainerClass(logo.src)}
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="max-w-full max-h-full object-contain p-1 sm:p-2"
+                  loading="lazy"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
