@@ -159,7 +159,7 @@ const AboutSection = () => {
               </div>
 
               {/* Additional Floating Badge */}
-              <div className="absolute top-3 right-3 sm:top-6 sm:right-6 bg-white/95 backdrop-blur-sm p-3 sm:p-4 rounded-lg shadow-lg border border-gray-100 animate-fade-in z-20">
+              <div className="absolute top-3 right-3 sm:top-1.5 sm:right-1.5 bg-white/95 backdrop-blur-sm p-3 sm:p-4 rounded-lg shadow-lg border border-gray-100 animate-fade-in z-20">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                   <span className="text-xs sm:text-sm font-semibold text-gray-900">

@@ -207,7 +207,7 @@ const AboutPage = () => {
                   ))}
                 </div>
 
-                <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-white/80 backdrop-blur-sm p-3 sm:p-4 rounded-lg shadow-lg border border-gray-100/50 animate-fade-in z-20">
+                <div className="absolute top-0 right-0 sm:top-2 sm:right-2 bg-white/95 backdrop-blur-sm p-3 sm:p-4 rounded-lg shadow-lg border border-gray-100 animate-fade-in z-20">
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                     <span className="text-xs sm:text-sm font-semibold text-gray-900">
