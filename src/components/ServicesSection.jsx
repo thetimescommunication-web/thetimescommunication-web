@@ -44,7 +44,7 @@ const ServicesSection = () => {
       title: "Documentary Film",
       description:
         "Craft compelling documentary films that tell authentic stories with depth, emotion, and cinematic storytelling.",
-      image: "/images/services/documentry.PNG",
+      image: "/images/services/documentry1.PNG",
       delay: "0.1s",
     },
     {
