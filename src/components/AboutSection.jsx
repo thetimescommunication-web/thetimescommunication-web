@@ -59,7 +59,7 @@ const AboutSection = () => {
 
   return (
     <SectionSkeleton isLoading={!allImagesLoaded} skeletonType="image">
-      <section className="section-padding bg-white" id="about">
+      <section className="section-padding bg-white pt-0 md:pt-16 lg:pt-24" id="about">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
