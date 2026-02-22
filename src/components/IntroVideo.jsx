@@ -61,7 +61,7 @@ function IntroVideo({ onFinish }) {
         ref={videoRef}
         className={`transition-opacity duration-500 ${
           isMobile 
-            ? 'max-w-[calc(100%-1rem)] max-h-full object-contain' 
+            ? 'max-w-[calc(100%-0.5rem)] max-h-full object-contain' 
             : 'h-full w-full object-cover'
         } ${
           videoReady ? 'opacity-100' : 'opacity-0'
