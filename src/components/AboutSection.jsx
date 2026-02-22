@@ -59,7 +59,7 @@ const AboutSection = () => {
 
   return (
     <SectionSkeleton isLoading={!allImagesLoaded} skeletonType="image">
-      <section className="section-padding bg-white" id="about">
+      <section className="section-padding bg-white pt-0 md:pt-16 lg:pt-24" id="about">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -75,7 +75,10 @@ const AboutSection = () => {
             </div>
 
             <div className="prose prose-lg text-gray-600 mb-8">
-              <p className="leading-relaxed">
+              <p
+                className="leading-relaxed text-justify break-words"
+                style={{ hyphens: "auto", WebkitHyphens: "auto", msHyphens: "auto" }}
+              >
                 The Times Communication is a creative film and media production
                 house based in Rajkot, Gujarat, driven by a passion for powerful
                 visual storytelling. We specialize in crafting corporate films,
@@ -156,14 +159,14 @@ const AboutSection = () => {
               </div>
 
               {/* Additional Floating Badge */}
-              <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm p-4 rounded-lg shadow-lg border border-gray-100 animate-fade-in z-20">
+              <div className="absolute top-3 right-3 sm:top-1.5 sm:right-1.5 bg-white/95 backdrop-blur-sm p-3 sm:p-4 rounded-lg shadow-lg border border-gray-100 animate-fade-in z-20">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-semibold text-gray-900">
+                  <span className="text-xs sm:text-sm font-semibold text-gray-900">
                     5+ Years
                   </span>
                 </div>
-                <div className="text-xs text-gray-600 mt-1">Experience</div>
+                <div className="text-[10px] sm:text-xs text-gray-600 mt-0.5 sm:mt-1">Experience</div>
               </div>
             </div>
 

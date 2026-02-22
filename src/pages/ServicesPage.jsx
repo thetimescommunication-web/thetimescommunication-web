@@ -357,16 +357,16 @@ const ServicesPage = () => {
             Let's discuss your project and create a video that drives results
             for your business.
           </p>
-          <div className="animate-bounce-in">
+          <div className="animate-bounce-in flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               to="/contact"
-              className="btn-outline hover:bg-white hover:text-primary-600 text-lg px-8 py-4 mr-4"
+              className="btn-outline hover:bg-white hover:text-primary-600 text-lg px-8 py-4 w-full max-w-xs sm:w-auto"
             >
               Get Free Consultation
             </Link>
             <Link
               to="/portfolio"
-              className="btn-outline hover:bg-white hover:text-primary-600 text-lg px-8 py-4"
+              className="btn-outline hover:bg-white hover:text-primary-600 text-lg px-8 py-4 w-full max-w-xs sm:w-auto"
             >
               View Our Work
             </Link>

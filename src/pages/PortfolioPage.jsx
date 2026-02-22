@@ -508,16 +508,16 @@ const PortfolioPage = () => {
             Let's create something amazing together. Contact us to discuss your
             next video project.
           </p>
-          <div className="animate-bounce-in">
+          <div className="animate-bounce-in flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               to="/contact"
-              className="btn-outline hover:bg-white hover:text-primary-600 text-lg px-8 py-4 mr-4"
+              className="btn-outline hover:bg-white hover:text-primary-600 text-lg px-8 py-4 w-full max-w-xs sm:w-auto"
             >
               Start Your Project
             </Link>
             <Link
               to="/services"
-              className="btn-outline hover:bg-white hover:text-primary-600 text-lg px-8 py-4"
+              className="btn-outline hover:bg-white hover:text-primary-600 text-lg px-8 py-4 w-full max-w-xs sm:w-auto"
             >
               View Services
             </Link>
