@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaAward,
   FaUsers,
@@ -9,6 +9,43 @@ import {
 } from "react-icons/fa";
 
 const AboutPage = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const productionImages = [
+    {
+      url: "/images/services/corporate.jpeg",
+      alt: "Corporate film production",
+    },
+    {
+      url: "/images/services/product_photography.png",
+      alt: "Product photography",
+    },
+    {
+      url: "/images/services/tv_digital_add.png",
+      alt: "TV and digital ads",
+    },
+    {
+      url: "/images/services/event_film.PNG",
+      alt: "Event film coverage",
+    },
+    {
+      url: "/images/services/real_estate.PNG",
+      alt: "Real estate walkthrough",
+    },
+    {
+      url: "/images/services/educational.PNG",
+      alt: "Educational / e-learning content",
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % productionImages.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [productionImages.length]);
+
   const stats = [
     {
       icon: FaAward,
@@ -30,7 +67,7 @@ const AboutPage = () => {
     },
     {
       icon: FaTrophy,
-      number: "50+",
+      number: "20+",
       label: "Awards Won",
       color: "text-yellow-600",
     },
@@ -113,7 +150,10 @@ const AboutPage = () => {
                 Our Story
               </h2>
               <div className="prose prose-lg text-gray-600 space-y-4">
-                <p>
+                <p
+                  className="text-justify break-words"
+                  style={{ hyphens: "auto", WebkitHyphens: "auto", msHyphens: "auto" }}
+                >
                   The Times Communication is a creative film and media
                   production house based in Rajkot, Gujarat, driven by a passion
                   for powerful visual storytelling. We specialize in crafting
@@ -128,18 +168,65 @@ const AboutPage = () => {
                 </p>
               </div>
             </div>
-            <div className="animate-fade-in">
-              <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop&q=80&auto=format"
-                alt="Corporate video interview setup in modern office"
-                className="w-full h-auto rounded-lg shadow-lg"
-                loading="lazy"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src =
-                    "https://via.placeholder.com/1200x800/009292/ffffff?text=The+Times+Communication";
-                }}
-              />
+            <div className="relative animate-fade-in">
+              <div className="relative group">
+                <div className="relative overflow-hidden rounded-lg shadow-2xl aspect-[3/2]">
+                  {productionImages.map((image, index) => (
+                    <img
+                      key={index}
+                      src={image.url}
+                      alt={image.alt}
+                      className={`absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-1000 ${
+                        index === currentImageIndex
+                          ? "opacity-100 z-10"
+                          : "opacity-0 z-0"
+                      }`}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src =
+                          "https://via.placeholder.com/1200x800/009292/ffffff?text=The+Times+Communication";
+                      }}
+                    />
+                  ))}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg z-20"></div>
+                </div>
+
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2">
+                  {productionImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        index === currentImageIndex
+                          ? "w-8 bg-white"
+                          : "w-2 bg-white/50 hover:bg-white/75"
+                      }`}
+                      aria-label={`Go to image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+
+                <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-white/80 backdrop-blur-sm p-3 sm:p-4 rounded-lg shadow-lg border border-gray-100/50 animate-fade-in z-20">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-xs sm:text-sm font-semibold text-gray-900">
+                      5+ Years
+                    </span>
+                  </div>
+                  <div className="text-[10px] sm:text-xs text-gray-600 mt-0.5 sm:mt-1">Experience</div>
+                </div>
+              </div>
+
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-primary-400 to-blue-500 rounded-full opacity-20 -z-10 animate-pulse"></div>
+              <div
+                className="absolute top-1/2 -left-12 w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-20 -z-10 animate-pulse"
+                style={{ animationDelay: "1s" }}
+              ></div>
+              <div
+                className="absolute bottom-1/4 -right-8 w-12 h-12 bg-gradient-to-r from-primary-300 to-pink-400 rounded-full opacity-15 -z-10 animate-pulse"
+                style={{ animationDelay: "2s" }}
+              ></div>
             </div>
           </div>
         </div>
