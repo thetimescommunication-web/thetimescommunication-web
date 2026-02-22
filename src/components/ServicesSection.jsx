@@ -161,11 +161,11 @@ const ServicesSection = () => {
               style={{ animationDelay: service.delay }}
             >
               {/* Service Image */}
-              <div className="relative mb-6 overflow-hidden rounded-lg bg-gray-200">
+              <div className="relative mb-6 overflow-hidden rounded-lg bg-gray-200 aspect-[3/2]">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   loading="lazy"
                   onError={(e) => {
                     // Fallback to placeholder if image doesn't exist
