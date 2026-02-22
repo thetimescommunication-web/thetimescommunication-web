@@ -41,7 +41,7 @@ const ServicesPage = () => {
         "Interview & voiceover integration",
         "HD / 4K final delivery",
       ],
-      image: "/images/services/documentry.PNG",
+      image: "/images/services/documentry1.PNG",
     },
     {
       icon: FaGraduationCap,
