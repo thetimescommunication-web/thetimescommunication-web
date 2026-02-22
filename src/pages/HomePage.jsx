@@ -1,6 +1,7 @@
 import React from "react";
 import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
+import TrustedBrandsSection from "../components/TrustedBrandsSection";
 import ServicesSection from "../components/ServicesSection";
 import PortfolioSection from "../components/PortfolioSection";
 import TestimonialsSection from "../components/TestimonialsSection";
@@ -10,6 +11,7 @@ const HomePage = () => {
     <div>
       <HeroSection />
       <AboutSection />
+      <TrustedBrandsSection />
       <ServicesSection />
       <PortfolioSection />
       <TestimonialsSection />

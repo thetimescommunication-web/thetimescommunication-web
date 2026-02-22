@@ -14,28 +14,28 @@ const AboutSection = () => {
 
   const productionImages = [
     {
-      url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=1000&fit=crop&q=80&auto=format",
-      alt: "Corporate video interview setup in modern office",
+      url: "/images/services/corporate.jpeg",
+      alt: "Corporate film production",
     },
     {
-      url: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&h=1000&fit=crop&q=80&auto=format",
-      alt: "Product photography shoot with studio lighting",
+      url: "/images/services/product_photography.png",
+      alt: "Product photography",
     },
     {
-      url: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1600&h=1000&fit=crop&q=80&auto=format",
-      alt: "TV and digital film commercial set",
+      url: "/images/services/tv_digital_add.png",
+      alt: "TV and digital ads",
     },
     {
-      url: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1600&h=1000&fit=crop&q=80&auto=format",
-      alt: "Music video production with band and lighting",
+      url: "/images/services/event_film.PNG",
+      alt: "Event film coverage",
     },
     {
-      url: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&h=1000&fit=crop&q=80&auto=format",
-      alt: "Real estate interior cinematography scene",
+      url: "/images/services/real_estate.PNG",
+      alt: "Real estate walkthrough",
     },
     {
-      url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&h=1000&fit=crop&q=80&auto=format",
-      alt: "E-learning content production environment",
+      url: "/images/services/educational.PNG",
+      alt: "Educational / e-learning content",
     },
   ];
 
@@ -117,7 +117,7 @@ const AboutSection = () => {
           <div className="relative animate-fade-in">
             <div className="relative group">
               {/* Image Container with Fade Animation */}
-              <div className="relative overflow-hidden rounded-lg shadow-2xl h-[500px]">
+              <div className="relative overflow-hidden rounded-lg shadow-2xl aspect-[3/2]">
                 {productionImages.map((image, index) => (
                   <img
                     key={index}
