@@ -69,7 +69,7 @@ const ServicesPage = () => {
         "Professional voiceover & music",
         "Multiple revisions included",
       ],
-      image: "/images/services/brand_story.PNG",
+      image: "/images/services/brand_story1.PNG",
     },
     {
       title: "Real Estate Walkthrough & Property Films",
