@@ -12,6 +12,8 @@ import {
   FaArrowRight,
   FaPlay,
 } from "react-icons/fa";
+import { SectionSkeleton } from "./SkeletonLoader";
+import { useSectionImageLoading } from "../hooks/useImageLoading";
 
 const ServicesSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -27,6 +29,7 @@ const ServicesSection = () => {
       setIsPlaying(!isPlaying);
     }
   };
+
   const services = [
     {
       icon: FaBuilding,
@@ -57,7 +60,7 @@ const ServicesSection = () => {
       title: "Brand Story Video Film",
       description:
         "Bring your brand's journey to life through powerful story-driven films that connect emotionally with your audience.",
-      image: "/images/services/brand_story.PNG",
+      image: "/images/services/brand_story1.PNG",
       delay: "0.3s",
     },
     {
@@ -126,8 +129,14 @@ const ServicesSection = () => {
     },
   ];
 
+  // Track image loading for services and demo video
+  const serviceImages = services.slice(0, 4).map(service => service.image);
+  const demoVideoImage = "/images/video-logo.jpeg";
+  const { allImagesLoaded } = useSectionImageLoading([...serviceImages, demoVideoImage]);
+
   return (
-    <section className="section-padding bg-gray-50" id="services">
+    <SectionSkeleton isLoading={!allImagesLoaded} skeletonType="service">
+      <section className="section-padding bg-gray-50" id="services">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-16 animate-slide-up">
@@ -264,6 +273,7 @@ const ServicesSection = () => {
         </div>
       </div>
     </section>
+    </SectionSkeleton>
   );
 };
 

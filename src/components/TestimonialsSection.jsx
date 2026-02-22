@@ -5,6 +5,8 @@ import {
   FaChevronLeft,
   FaChevronRight,
 } from "react-icons/fa";
+import { SectionSkeleton } from "./SkeletonLoader";
+import { useSectionImageLoading } from "../hooks/useImageLoading";
 
 const TestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -41,6 +43,10 @@ const TestimonialsSection = () => {
       image: "/images/testinomials/DNCastech.jpeg",
     }
   ];
+
+  // Track image loading for testimonials
+  const testimonialImages = testimonials.map(testimonial => testimonial.image);
+  const { allImagesLoaded } = useSectionImageLoading(testimonialImages);
 
   // Define which logos need dark backgrounds (white/light logos)
   const darkBgLogos = [
@@ -127,7 +133,8 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-gray-50" id="testimonials">
+    <SectionSkeleton isLoading={!allImagesLoaded} skeletonType="testimonial">
+      <section className="section-padding bg-gray-50" id="testimonials">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-16 animate-slide-up">
@@ -318,6 +325,7 @@ const TestimonialsSection = () => {
         </div>
       </div>
     </section>
+    </SectionSkeleton>
   );
 };
 

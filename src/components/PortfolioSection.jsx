@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaPlay, FaArrowRight, FaYoutube, FaSpinner, FaCalendarAlt, FaExternalLinkAlt } from "react-icons/fa";
+import { SectionSkeleton } from "./SkeletonLoader";
+import { useSectionImageLoading } from "../hooks/useImageLoading";
 
 const HOME_PORTFOLIO_SEQUENCE = [
   "corporate",
@@ -225,7 +227,8 @@ const PortfolioSection = () => {
     .slice(0, 4);
 
   return (
-    <section className="section-padding bg-white" id="portfolio">
+    <SectionSkeleton isLoading={loading} skeletonType="card">
+      <section className="section-padding bg-white" id="portfolio">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center mb-16 animate-slide-up">
@@ -398,6 +401,7 @@ const PortfolioSection = () => {
         </div>
       </div>
     </section>
+    </SectionSkeleton>
   );
 };
 

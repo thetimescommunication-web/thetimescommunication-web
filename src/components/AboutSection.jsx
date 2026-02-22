@@ -6,6 +6,8 @@ import {
   FaUsers,
   FaProjectDiagram,
 } from "react-icons/fa";
+import { SectionSkeleton } from "./SkeletonLoader";
+import { useSectionImageLoading } from "../hooks/useImageLoading";
 
 const AboutSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -37,6 +39,9 @@ const AboutSection = () => {
     },
   ];
 
+  // Track image loading
+  const { allImagesLoaded } = useSectionImageLoading(productionImages);
+
   // Auto-rotate images every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
@@ -53,7 +58,8 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-white" id="about">
+    <SectionSkeleton isLoading={!allImagesLoaded} skeletonType="image">
+      <section className="section-padding bg-white" id="about">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -175,6 +181,7 @@ const AboutSection = () => {
         </div>
       </div>
     </section>
+    </SectionSkeleton>
   );
 };
 
